@@ -1,3 +1,7 @@
+# Important Notes:
+# executing this script will generate a lot of
+# ... errors. Ignore those.
+
 from socket import gethostbyname as get_ip
 from threading import Thread
 
