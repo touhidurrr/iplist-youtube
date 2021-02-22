@@ -1,9 +1,6 @@
-# Important Notes:
-# executing this script will generate a lot of
-# ... errors. Ignore those.
-
 from socket import gethostbyname as get_ip
 from threading import Thread
+from urllib.request import urlretrieve as download
 
 # make a list of ips
 ipList = []
@@ -18,6 +15,9 @@ def fetch_ip(url):
 	
 	# append ip for listing
 	ipList.append( ip )
+
+# download the youtubeparsed list
+download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed', 'youtubeparsed')
 
 
 # open the youtubeparsed file
