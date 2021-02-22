@@ -1,3 +1,7 @@
+# executing this script will generate a lot
+# ... of errors. Ignore those errors.
+
+
 from socket import gethostbyname as get_ip
 from threading import Thread
 from urllib.request import urlretrieve as download
