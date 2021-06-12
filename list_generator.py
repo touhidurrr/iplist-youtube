@@ -63,7 +63,12 @@ for t in taskList:
 # ... of the same ip from the list
 ipList = list( set( ipList ) )
 ipList.sort()
-ipList.remove('')
+
+# remove Empty strings if available
+try:
+  ipList.remove('')
+except ValueError:
+  pass
 
 # now just print the & create a new file of
 # ... fetched ip's
