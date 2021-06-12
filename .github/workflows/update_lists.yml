@@ -28,7 +28,8 @@ jobs:
         with:
           python-version: ${{ env.python }}
         
-      - run: python3 --version
+      - name: Check Python3 Version
+        run: python3 --version
       
       - name: Installing dnspython-${{ env.dnspython }}
         run: sudo pip3 install -I dnspython==${{ env.dnspython }}
