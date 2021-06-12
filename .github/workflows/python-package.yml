@@ -1,0 +1,39 @@
+name: Update Lists
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  push:
+    paths:
+      - 'list_generator.py'
+  pull_request:
+    paths:
+      - 'list_generator.py'
+  workflow_dispatch:
+
+jobs:
+  update-lists:
+    runs-on: ubuntu-latest
+    env:
+      python: 3.7
+      dnspython: 2.1.0
+    
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+          python-version: ${{ env.python }}
+      
+      - name: Installing dnspython-${{ env.dnspython }}
+        run: sudo pip3 install -I dnspython==${{ env.dnspython }}
+      
+      - name: Generating Lists
+        run: python3 ./list_generator.py
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
+          git config --local user.name 'touhidurrr'
+          git add ipv4.txt ipv6.txt
+          git commit -m "Generated Meta"
+          git push
