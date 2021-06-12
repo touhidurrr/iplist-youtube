@@ -1,7 +1,7 @@
 # iplist-youtube
 Make a list of all ips that youtube uses
 
-This is a list that keeps all ipv4 and ipv6 addresses used by Youtube. We use DNS Lookups (testing phase) to achieve this and the lists are automatically updated on an Hourly basis. The project is currently UNSTABLE. So, not all ips maybe available.
+This is a list that keeps all ipv4 and ipv6 addresses used by Youtube. We use DNS Lookups (testing phase) to achieve this and the lists are automatically updated on an random basis mostly a couple of time in every Hour. The project is currently UNSTABLE. So, not all ips maybe available.
 
 Ipv4 list raw link => [Here!](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/ipv4_list.txt)
 
