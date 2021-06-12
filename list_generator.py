@@ -24,7 +24,7 @@ def fetch_ip(url):
 download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed', 'youtubeparsed')
 
 # keep previous ips
-with open('iplist.txt', mode = 'r', encoding = 'utf-8') as f:
+with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
     ipList.append( ip.strip() )
 
@@ -62,6 +62,8 @@ for t in taskList:
 # this line of code will remove repeatation
 # ... of the same ip from the list
 ipList = list( set( ipList ) )
+ipList.sort()
+ipList.remove('')
 
 # now just print the & create a new file of
 # ... fetched ip's
@@ -71,6 +73,6 @@ print(*ipList, sep='\n')
 
 # this will create a file 'youtube_iplist.txt'
 # ... with the list of the ips
-with open('iplist.txt', mode = 'w', encoding = 'utf-8') as f:
+with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
   
   f.write('\n'.join(ipList))
