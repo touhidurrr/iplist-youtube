@@ -23,6 +23,10 @@ def fetch_ip(url):
 # download the youtubeparsed list
 download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed', 'youtubeparsed')
 
+# keep previous ips
+with open('iplist.txt', mode = 'r', encoding = 'utf-8') as f:
+  for ip in f.readlines():
+    ipList.append( ip.strip() )
 
 # open the youtubeparsed file
 with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
