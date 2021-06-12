@@ -43,7 +43,7 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
       continue
     
     # strip whitespaces and '.'
-    url = url.strip().lstrip('.')
+    url = url.strip()
     
     # make a thread that will save the ip
     # ... and save it to taskList
