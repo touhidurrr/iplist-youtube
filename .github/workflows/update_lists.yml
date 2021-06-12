@@ -27,7 +27,8 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ env.python }}
-        run: python3 --version
+        
+      - run: python3 --version
       
       - name: Installing dnspython-${{ env.dnspython }}
         run: sudo pip3 install -I dnspython==${{ env.dnspython }}
