@@ -50,7 +50,7 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     taskList.append(Thread(target=fetch_ip, args=(url,)))
     
 # start the tasks
-taskNumber = 8
+taskNumber = 1
 tasksLen = len(taskList)
 for i in range(0, tasksLen, taskNumber):
   for j in range(i, min(i + taskNumber, tasksLen)):
