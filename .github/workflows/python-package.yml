@@ -15,13 +15,17 @@ jobs:
   update-lists:
     runs-on: ubuntu-latest
     env:
-      python: 3.7
+      python: 3.7.3
       dnspython: 2.1.0
     
     steps:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
           python-version: ${{ env.python }}
       
       - name: Installing dnspython-${{ env.dnspython }}
