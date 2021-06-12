@@ -2,7 +2,7 @@ name: Update Lists
 
 on:
   schedule:
-    - cron: '*/7 * * * *'
+    - cron: '5 * * * *'
   push:
     paths:
       - 'list_generator.py'
