@@ -50,12 +50,12 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     taskList.append(Thread(target=fetch_ip, args=(url,)))
     
 # start the tasks
-taskNumber = 8
-tasksLen = len(taskList)
-for i in range(0, tasksLen, taskNumber):
-  for j in range(i, min(i + taskNumber, tasksLen)):
+threadNumber = 8
+taskNumber = len(taskList)
+for i in range(0, taskNumber, threadNumber):
+  for j in range(i, min(i + threadNumber, taskNumber)):
     taskList[j].start()
-  for j in range(i, min(i + taskNumber, tasksLen)):
+  for j in range(i, min(i + threadNumber, taskNumber)):
     taskList[j].join()
 
 # make sure no repeating ip is available
