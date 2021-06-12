@@ -41,6 +41,6 @@ jobs:
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
           git config --local user.name 'touhidurrr'
-          git add ipv4.txt ipv6.txt
+          git add *.txt
           git commit -m "Generated Meta"
           git push
