@@ -50,7 +50,7 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     #taskList.append(Thread(target=fetch_ip, args=(url,)))
     try:
       fetch_ip(url)
-    except e:
+    else:
       pass
     
 # start the tasks
