@@ -47,9 +47,11 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     
     # make a thread that will save the ip
     # ... and save it to taskList
-    taskList.append(Thread(target=fetch_ip, args=(url,)))
+    #taskList.append(Thread(target=fetch_ip, args=(url,)))
+    fetch_ip(url)
     
 # start the tasks
+"""
 threads = 16
 taskNumber = len(taskList)
 for i in range(0, taskNumber, threads):
@@ -57,7 +59,7 @@ for i in range(0, taskNumber, threads):
     taskList[j].start()
   for j in range(i, min(i + threads, taskNumber)):
     taskList[j].join()
-
+"""
 # make sure no repeating ip is available
 # this line of code will remove repeatation
 # ... of the same ip from the list
