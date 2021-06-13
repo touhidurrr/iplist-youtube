@@ -48,7 +48,10 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     # make a thread that will save the ip
     # ... and save it to taskList
     #taskList.append(Thread(target=fetch_ip, args=(url,)))
-    fetch_ip(url)
+    try:
+      fetch_ip(url)
+    except e:
+      pass
     
 # start the tasks
 """
