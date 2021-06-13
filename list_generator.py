@@ -52,8 +52,8 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     #  fetch_ip(url)
     #except:
     #  pass
-    
-# start the tasks
+"""    
+# start the tasks in threads
 threads = 16
 taskNumber = len(taskList)
 for i in range(0, taskNumber, threads):
@@ -61,6 +61,13 @@ for i in range(0, taskNumber, threads):
     taskList[j].start()
   for j in range(i, min(i + threads, taskNumber)):
     taskList[j].join()
+"""
+
+# start the tasks all at once
+for t in taskList:
+  t.start()
+for t in taskList:
+  t.join()
 
 # make sure no repeating ip is available
 # this line of code will remove repeatation
