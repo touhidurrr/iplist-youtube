@@ -15,7 +15,7 @@ jobs:
   update-lists:
     runs-on: ubuntu-latest
     env:
-      python: 3.7
+      python: 3.9
       dnspython: 2.1.0
     
     steps:
@@ -32,7 +32,9 @@ jobs:
         run: python3 --version
       
       - name: Installing dnspython-${{ env.dnspython }}
-        run: sudo pip3 install -I dnspython==${{ env.dnspython }}
+        run: |
+          sudo pip3 install --upgrade pip3
+          sudo pip3 install -I dnspython==${{ env.dnspython }}
       
       - name: Generating Lists
         run: python3 ./list_generator.py
