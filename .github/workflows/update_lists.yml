@@ -5,10 +5,12 @@ on:
     - cron: '*/5 * * * *'
   push:
     paths:
-      - 'list_generator.py'
+      - '**.update_lists.yml'
+      - '**.py'
   pull_request:
     paths:
-      - 'list_generator.py'
+      - '**.update_lists.yml'
+      - '**.py'
   workflow_dispatch:
 
 jobs:
