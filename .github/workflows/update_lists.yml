@@ -17,7 +17,7 @@ jobs:
   update-lists:
     runs-on: ubuntu-latest
     env:
-      python: '3.10.0 - 3.10.99'
+      python: '~3.10.x'
       dnspython: '2.1.0'
     
     steps:
