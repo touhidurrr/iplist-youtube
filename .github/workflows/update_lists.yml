@@ -36,7 +36,7 @@ jobs:
       - name: Installing dnspython-${{ env.dnspython }} and Generating Lists
         run: |
           pip3 install --upgrade pip
-          pip3 install dnspython
+          pip3 install -I dnspython==${{ env.dnspython }}
           python3 ./list_generator.py
       
       - name: Commit changes
