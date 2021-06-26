@@ -17,7 +17,7 @@ jobs:
   update-lists:
     runs-on: ubuntu-latest
     env:
-      python: '*'
+      python: '3.9'
       dnspython: '2.1.0'
     
     steps:
@@ -43,6 +43,6 @@ jobs:
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
           git config --local user.name 'touhidurrr'
-          git add *.txt
+          git add ipv?_list.txt
           git commit -m 'Updated Lists [Automated]'
           git push
