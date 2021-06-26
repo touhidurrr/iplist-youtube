@@ -1,24 +1,61 @@
 # executing this script will generate a lot
 # ... of errors. Ignore those errors.
 
-
-from socket import gethostbyname as get_ip
+from dns import resolver
 from threading import Thread
 from urllib.request import urlretrieve as download
 
+res = resolver.Resolver(configure=False)
+res.nameservers = [
+  '1.1.1.1', '1.0.0.1', #Cloudflare
+  '8.8.8.8', '8.8.4.4', #Google Public DNS
+  '208.67.222.222', '208.67.220.220', #OpenDNS
+  '209.244.0.3', '209.244.0.4', #Level 3
+  '64.6.64.6', '64.6.65.6', #Verisign
+  '9.9.9.9', '149.112.112.112', #Quad9
+  '8.26.56.26', '8.20.247.20', #Comodo Secure DNS
+  '84.200.69.80', '84.200.70.40', #DNS.WATCH
+  '199.85.126.10', '199.85.127.10', #Norton ConnectSafe
+  '81.218.119.11', '209.88.198.133', #GreenTeamDNS
+  '195.46.39.39', '195.46.39.40', #SafeDNS
+  '185.121.177.177', '169.239.202.202', #OpenNIC
+  '208.76.50.50', '208.76.51.51', #SmartViper
+  '80.80.80.80', '80.80.81.81', #Freenom World
+  '216.146.35.35', '216.146.36.36', #Dyn
+  '37.235.1.174', '37.235.1.177', #FreeDNS
+  '198.101.242.72', '23.253.163.53', #Alternate DNS
+  '77.88.8.8', '77.88.8.1', #Yandex.DNS
+  '91.239.100.100', '89.233.43.71', #UncensoredDNS
+  '74.82.42.42', #Hurricane Electric
+  '109.69.8.51', #puntCAT
+  '156.154.70.1', '156.154.71.1', #Neustar
+  '1.2.4.8', '210.2.4.8', #CNNIC SDNS
+  '240c::6666', '240c::6644', #CFIEC IPv6 Public DNS
+  '223.5.5.5', '223.6.6.6', #AliDNS
+  '180.76.76.76', #Baidu Public DNS
+  '119.29.29.29', '119.28.28.28', #DNSPod Public DNS+
+  '114.114.114.114', '114.114.115.115', #114DNS
+  '117.50.11.11', '117.50.22.22', #OneDNS
+  '101.226.4.6', '218.30.118.6', #DNSpai
+  '94.140.14.14', '94.140.15.15', #AdGuard DNS Default
+  '94.140.14.15', '94.140.15.16', #AdGuard DNS Family protection
+  '94.140.14.140', '94.140.14.141' #AdGuard DNS Non-filtering
+]
+
 # make a list of ips
-ipList = []
+ipv4List = []
+ipv6List = []
 
 # make a list of Threads
 taskList = []
 
-def fetch_ip(url):
+def fetch_ip(URL, Query, List):
   
-  #get ip
-  ip = get_ip( url )
+  #get ips
+  ips = res.resolve(URL, Query)
   
-  # append ip for listing
-  ipList.append( ip )
+  # append the ips for listing
+  List += [str(i) for i in ips]
 
 # download the youtubeparsed list
 download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed', 'youtubeparsed')
@@ -26,7 +63,11 @@ download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/cate
 # keep previous ips
 with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
-    ipList.append( ip.strip() )
+    ipv4List.append( ip.strip() )
+
+with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
+  for ip in f.readlines():
+    ipv6List.append( ip.strip() )
 
 # open the youtubeparsed file
 with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
@@ -47,11 +88,9 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     
     # make a thread that will save the ip
     # ... and save it to taskList
-    taskList.append(Thread(target=fetch_ip, args=(url,)))
-    #try:
-    #  fetch_ip(url)
-    #except:
-    #  pass
+    taskList.append(Thread(target=fetch_ip, args=(url, 'A', ipv4List)))
+    taskList.append(Thread(target=fetch_ip, args=(url, 'AAAA', ipv6List)))
+
 """    
 # start the tasks in threads
 threads = 16
@@ -72,23 +111,31 @@ for t in taskList:
 # make sure no repeating ip is available
 # this line of code will remove repeatation
 # ... of the same ip from the list
-ipList = list( set( ipList ) )
-ipList.sort()
+ipv4List = list( set( ipv4List ) )
+ipv6List = list( set( ipv6List ) )
+ipv4List.sort()
+ipv6List.sort()
 
 # remove Empty strings if available
 try:
-  ipList.remove('')
+  ipv4List.remove('')
+except ValueError:
+  pass
+
+try:
+  ipv6List.remove('')
 except ValueError:
   pass
 
 # now just print the & create a new file of
 # ... fetched ip's
 
-# this will show the ips
-print(*ipList, sep='\n')
-
 # this will create a file 'youtube_iplist.txt'
 # ... with the list of the ips
 with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
   
-  f.write('\n'.join(ipList))
+  f.write('\n'.join(ipv4List))
+
+with open('ipv6_list.txt', mode = 'w', encoding = 'utf-8') as f:
+  
+  f.write('\n'.join(ipv6List))
