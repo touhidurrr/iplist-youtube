@@ -33,13 +33,11 @@ jobs:
       - name: Check Python3 Version
         run: python3 --version
       
-      - name: Installing dnspython-${{ env.dnspython }}
+      - name: Installing dnspython-${{ env.dnspython }} and Generating Lists
         run: |
-          sudo pip3 install --upgrade pip
-          sudo pip3 install -I dnspython==${{ env.dnspython }}
-      
-      - name: Generating Lists
-        run: python3 ./list_generator.py
+          pip3 install --upgrade pip
+          pip3 install -I dnspython==${{ env.dnspython }}
+          python3 ./list_generator.py
       
       - name: Commit changes
         run: |
