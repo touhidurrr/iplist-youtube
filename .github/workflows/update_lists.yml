@@ -17,8 +17,8 @@ jobs:
   update-lists:
     runs-on: ubuntu-latest
     env:
-      python: '3.10'
-      dnspython: '2.1.0'
+      python: 3.10
+      dnspython: 2.1.0
     
     steps:
       - uses: actions/checkout@v2
