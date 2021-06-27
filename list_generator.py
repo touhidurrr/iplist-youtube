@@ -77,9 +77,7 @@ with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
 
 # count and remember the number of previous entries
 previousIpv4s = len(ipv4List)
-print('Read', previousIpv4s, 'ipv4\'s from ipv4_list.txt')
 previousIpv6s = len(ipv6List)
-print('Read', previousIpv6s, 'ipv6\'s from ipv6_list.txt')
 
 # open the youtubeparsed file
 with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
@@ -137,8 +135,10 @@ try:
 except ValueError:
   pass
 
-# calculate and print number of new entries
+# calculate and print changes
+print('Read', previousIpv4s, 'ipv4\'s from ipv4_list.txt')
 print('Number of new ipv4 addresses found:', len(ipv4List) - previousIpv4s)
+print('Read', previousIpv6s, 'ipv6\'s from ipv6_list.txt')
 print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 
 # now write the ips in files
