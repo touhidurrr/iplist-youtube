@@ -53,8 +53,11 @@ taskList = []
 
 def fetch_ip(URL, Query, List):
   
-  #get ips
+  # get ips
   ips = res.resolve(URL, Query)
+  
+  # print ips
+  print(URL, '==>', *ips)
   
   # append the ips for listing
   List += [str(i) for i in ips]
@@ -70,6 +73,10 @@ with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
 with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
     ipv6List.append( ip.strip() )
+
+# count and remember the number of previous entries
+previousIpv4s = len(ipv4List)
+previousIpv6s = len(ipv6List)
 
 # open the youtubeparsed file
 with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
@@ -126,6 +133,10 @@ try:
   ipv6List.remove('')
 except ValueError:
   pass
+
+# calculate and print number of new entries
+print('Number of new ipv4 addresses found:', len(ipv4List) - previousIpv4s)
+print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 
 # now write the ips in files
 with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
