@@ -1,5 +1,5 @@
-# executing this script will generate a lot
-# ... of errors. Ignore those errors.
+# executing this script will generate a lot of errors, ignore them
+# errors in threads only close the thread that got the error
 
 from dns import resolver
 from threading import Thread
@@ -88,8 +88,7 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     # strip whitespaces and '.'
     url = url.strip()
     
-    # make a thread that will save the ip
-    # ... and save it to taskList
+    # make a thread for each fetch_ip call
     taskList.append(Thread(target=fetch_ip, args=(url, 'A', ipv4List)))
     taskList.append(Thread(target=fetch_ip, args=(url, 'AAAA', ipv6List)))
 
@@ -107,18 +106,17 @@ for i in range(0, taskNumber, threads):
 # start the tasks all at once
 for t in taskList:
   t.start()
+# and wait for them to finish
 for t in taskList:
   t.join()
 
-# make sure no repeating ip is available
-# this line of code will remove repeatation
-# ... of the same ip from the list
+# make sure no duplicate ip is available, de-duplicate list entries
 ipv4List = list( set( ipv4List ) )
 ipv6List = list( set( ipv6List ) )
 ipv4List.sort()
 ipv6List.sort()
 
-# remove Empty strings if available
+# try to remove Empty strings if available
 try:
   ipv4List.remove('')
 except ValueError:
@@ -129,11 +127,7 @@ try:
 except ValueError:
   pass
 
-# now just print the & create a new file of
-# ... fetched ip's
-
-# this will create a file 'youtube_iplist.txt'
-# ... with the list of the ips
+# now write the ips in files
 with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
   
   f.write('\n'.join(ipv4List))
