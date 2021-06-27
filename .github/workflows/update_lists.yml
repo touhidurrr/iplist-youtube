@@ -45,4 +45,5 @@ jobs:
           git config --local user.name 'touhidurrr'
           git add ipv?_list.txt
           git commit -m 'Updated Lists [Automated]'
+          git pull
           git push
