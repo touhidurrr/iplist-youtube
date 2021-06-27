@@ -55,12 +55,13 @@ def fetch_ip(URL, Query, List):
   
   # get ips
   ips = res.resolve(URL, Query)
+  ips = [str(i) for i in ips]
   
   # print ips
-  print(URL, '==>', *ips)
+  print(URL, 'IN', Query, ips)
   
   # append the ips for listing
-  List += [str(i) for i in ips]
+  List += ips
 
 # download the youtubeparsed list
 download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed', 'youtubeparsed')
@@ -76,7 +77,9 @@ with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
 
 # count and remember the number of previous entries
 previousIpv4s = len(ipv4List)
+print('Read', previousIpv4s, 'ipv4\'s from ipv4_list.txt')
 previousIpv6s = len(ipv6List)
+print('Read', previousIpv6s, 'ipv6\'s from ipv6_list.txt')
 
 # open the youtubeparsed file
 with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
