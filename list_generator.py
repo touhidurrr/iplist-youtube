@@ -57,7 +57,7 @@ def fetch_ip(URL, Query, List):
   ips = res.resolve(URL, Query)
   ips = [str(i) for i in ips]
   
-  # print ips
+  # print ips format 'example.com IN A [192.0.2.1, ...]'
   print(URL, 'IN', Query, ips)
   
   # append the ips for listing
