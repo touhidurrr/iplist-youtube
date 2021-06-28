@@ -2,6 +2,7 @@
 # errors in threads only close the thread that got the error
 
 from dns import resolver
+from os import remove
 from threading import Thread
 from urllib.request import urlretrieve as download
 
@@ -52,18 +53,18 @@ ipv6List = []
 taskList = []
 
 def fetch_ip(URL, Query, List):
-  
+
   # get ips
   ips = res.resolve(URL, Query)
   ips = [str(i) for i in ips]
-  
+
   # print ips format 'example.com IN A [192.0.2.1, ...]'
   print(URL, 'IN', Query, ips)
-  
+
   # append the ips for listing
   List += ips
 
-# download the youtubeparsed list
+# download youtubeparsed
 download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed', 'youtubeparsed')
 
 # keep previous ips
@@ -81,21 +82,21 @@ previousIpv6s = len(ipv6List)
 
 # open the youtubeparsed file
 with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
-  
+
   # for each url in the file
   for url in f.readlines():
-    
+
     # ignore empty lines
     if url == '':
       continue
-    
+
     # ignore if '#' character is found
     if url[0] == '#':
       continue
-    
+
     # strip whitespaces and '.'
     url = url.strip()
-    
+
     # make a thread for each fetch_ip call
     taskList.append(Thread(target=fetch_ip, args=(url, 'A', ipv4List)))
     taskList.append(Thread(target=fetch_ip, args=(url, 'AAAA', ipv6List)))
@@ -143,9 +144,12 @@ print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 
 # now write the ips in files
 with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
-  
+
   f.write('\n'.join(ipv4List))
 
 with open('ipv6_list.txt', mode = 'w', encoding = 'utf-8') as f:
-  
+
   f.write('\n'.join(ipv6List))
+
+# remove youtubeparsed
+remove('youtubeparsed')
