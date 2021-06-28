@@ -5,12 +5,12 @@ on:
     - cron: '*/5 * * * *'
   push:
     paths:
-      - '**update_lists.yml'
       - '**.py'
+      - '.github/workflows/update_lists.yml'
   pull_request:
     paths:
-      - '**update_lists.yml'
       - '**.py'
+      - '.github/workflows/update_lists.yml'
   workflow_dispatch:
 
 jobs:
