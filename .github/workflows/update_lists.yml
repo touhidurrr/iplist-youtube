@@ -19,26 +19,26 @@ jobs:
     env:
       python: '3.9'
       dnspython: '2.1.0'
-    
+
     steps:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT }}
-      
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: ${{ env.python }}
-        
+
       - name: Check Python3 Version
         run: python3 --version
-      
+
       - name: Installing dnspython-${{ env.dnspython }} and Generating Lists
         run: |
           pip3 install --upgrade pip
           pip3 install -I dnspython==${{ env.dnspython }}
           python3 ./list_generator.py
-      
+
       - name: Commit changes
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
