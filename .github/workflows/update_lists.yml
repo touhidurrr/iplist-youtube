@@ -21,12 +21,12 @@ jobs:
       dnspython: '2.1.0'
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout
         with:
           token: ${{ secrets.PAT }}
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python
         with:
           python-version: ${{ env.python }}
 
