@@ -39,8 +39,8 @@ res.nameservers = [
   '114.114.114.114', '114.114.115.115', #114DNS
   '117.50.11.11', '117.50.22.22', #OneDNS
   '101.226.4.6', '218.30.118.6',  #DNSpai
-  '94.140.14.14', '94.140.15.15', '2a10:50c0::ad1:ff', '2a10:50c0::ad2:ff', #AdGuard DNS Default
-  '94.140.14.15', '94.140.15.16', '2a10:50c0::bad1:ff', '2a10:50c0::bad2:ff', #AdGuard DNS Family protection
+  # '94.140.14.14', '94.140.15.15', '2a10:50c0::ad1:ff', '2a10:50c0::ad2:ff', #AdGuard DNS Default
+  # '94.140.14.15', '94.140.15.16', '2a10:50c0::bad1:ff', '2a10:50c0::bad2:ff', #AdGuard DNS Family protection
   '94.140.14.140', '94.140.14.141', '2a10:50c0::1:ff', '2a10:50c0::2:ff', #AdGuard DNS Non-filtering
   '45.90.28.167', '45.90.30.167', '2a07:a8c0::82:86df', '2a07:a8c1::82:86df' #NextDNS
 ]
