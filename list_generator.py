@@ -87,16 +87,16 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
   # for each url in the file
   for url in f.readlines():
 
+    # strip whitespaces and '.'
+    url = url.strip()
+
     # ignore empty lines
     if url == '':
       continue
 
-    # ignore if '#' character is found
-    if url[0] == '#':
+    # ignore if the line starts with '#'
+    if url.startswith('#'):
       continue
-
-    # strip whitespaces and '.'
-    url = url.strip()
 
     # make a thread for each fetch_ip call
     taskList.append(Thread(target=fetch_ip, args=(url, 'A', ipv4List)))
