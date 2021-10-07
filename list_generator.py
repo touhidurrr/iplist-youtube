@@ -4,7 +4,7 @@
 from dns import resolver
 from os import remove
 from threading import Thread
-from socket import inet_aton as ipsort
+from ipaddress import ip_address
 from urllib.request import urlretrieve as download
 
 res = resolver.Resolver(configure=False)
@@ -123,8 +123,8 @@ for t in taskList:
 # make sure no duplicate ip is available, de-duplicate list entries
 ipv4List = list( set( ipv4List ) )
 ipv6List = list( set( ipv6List ) )
-ipv4List.sort(key=iplist)
-ipv6List.sort(key=iplist)
+ipv4List.sort(key=ip_address)
+ipv6List.sort(key=ip_address)
 
 # try to remove Empty strings if available
 try:
