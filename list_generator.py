@@ -1,3 +1,4 @@
+#!/bin/python3
 # executing this script will generate a lot of errors, ignore them
 # errors in threads only close the thread that got the error
 
