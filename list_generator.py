@@ -121,11 +121,9 @@ for t in taskList:
 for t in taskList:
   t.join()
 
-# make sure no duplicate ip is available, de-duplicate list entries
+# de-duplicate list entries
 ipv4List = list( set( ipv4List ) )
 ipv6List = list( set( ipv6List ) )
-ipv4List.sort(key=ip_address)
-ipv6List.sort(key=ip_address)
 
 # try to remove Empty strings if available
 try:
@@ -143,6 +141,21 @@ print('Read', previousIpv4s, 'ipv4\'s from ipv4_list.txt')
 print('Number of new ipv4 addresses found:', len(ipv4List) - previousIpv4s)
 print('Read', previousIpv6s, 'ipv6\'s from ipv6_list.txt')
 print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
+
+# read the files again. usefull for running the script in background.
+with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
+  for ip in f.readlines():
+    ipv4List.append( ip.strip() )
+
+with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
+  for ip in f.readlines():
+    ipv6List.append( ip.strip() )
+
+# de-duplicate list entries and sort them
+ipv4List = list( set( ipv4List ) )
+ipv6List = list( set( ipv6List ) )
+ipv4List.sort(key=ip_address)
+ipv6List.sort(key=ip_address)
 
 # now write the ips in files
 with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
