@@ -47,3 +47,6 @@ jobs:
           git commit -m 'Updated Lists [Automated]'
           git pull
           git push
+
+      - name: Check diff
+        run: git diff
