@@ -165,6 +165,3 @@ with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
 with open('ipv6_list.txt', mode = 'w', encoding = 'utf-8') as f:
 
   f.write('\n'.join(ipv6List))
-
-# remove youtubeparsed
-remove('youtubeparsed')
