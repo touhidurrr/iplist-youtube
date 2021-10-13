@@ -3,7 +3,6 @@
 # errors in threads only close the thread that got the error
 
 from dns import resolver
-from os import remove
 from threading import Thread
 from ipaddress import ip_address
 from urllib.request import urlretrieve as download
