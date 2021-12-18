@@ -159,8 +159,8 @@ ipv6List.sort(key=ip_address)
 # now write the ips in files
 with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
 
-  f.write('\n'.join(ipv4List))
+  f.write('\n'.join(ipv4List) + '\n')
 
 with open('ipv6_list.txt', mode = 'w', encoding = 'utf-8') as f:
 
-  f.write('\n'.join(ipv6List))
+  f.write('\n'.join(ipv6List) + '\n')
