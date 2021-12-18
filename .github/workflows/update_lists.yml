@@ -39,6 +39,11 @@ jobs:
           pip3 install -I dnspython==${{ env.dnspython }}
           python3 ./list_generator.py
 
+      - name: Update IP count in README.md
+        run: |
+          TOTAL_IPS=$(wc -l ipv?_list.txt | grep -oP '\d+(?=\s+total)')
+          sed -i -E "s|\*\*[0-9]+\*\*|**$TOTAL_IPS**|" README.md
+
       - name: Commit changes
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
