@@ -54,4 +54,4 @@ jobs:
           git push
 
       - name: Check diff
-        run: git diff
+        run: git diff HEAD..HEAD~1
