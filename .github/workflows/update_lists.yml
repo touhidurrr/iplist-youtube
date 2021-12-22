@@ -5,11 +5,7 @@ on:
     - cron: '*/5 * * * *'
   push:
     paths:
-      - '**.py'
-      - '.github/workflows/update_lists.yml'
-  pull_request:
-    paths:
-      - '**.py'
+      - 'list_generator*'
       - '.github/workflows/update_lists.yml'
   workflow_dispatch:
 
@@ -32,6 +28,14 @@ jobs:
 
       - name: Check Python3 Version
         run: python3 --version
+    
+      - name: Run list_generator.sh
+        run: |
+          echo 'previos state ...'
+          wc -l ipv?_list.txt
+          ./list_generator.sh
+          echo 'new state ...'
+          wc -l ipv?_list.txt
 
       - name: Installing dnspython-${{ env.dnspython }} and Generating Lists
         run: |
