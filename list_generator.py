@@ -70,9 +70,10 @@ download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/cate
 
 # keep previous ips
 with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
-  ip = ip.strip()
-  if ip != '':
-    ipv4List.append( ip )
+  for ip in f.readlines():
+    ip = ip.strip()
+    if ip != '':
+      ipv4List.append( ip )
 
 with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
@@ -135,9 +136,10 @@ print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 
 # read the files again. usefull for running the script in background.
 with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
-  ip = ip.strip()
-  if ip != '':
-    ipv4List.append( ip )
+  for ip in f.readlines():
+    ip = ip.strip()
+    if ip != '':
+      ipv4List.append( ip )
 
 with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
