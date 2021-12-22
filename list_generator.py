@@ -125,15 +125,10 @@ ipv4List = list( set( ipv4List ) )
 ipv6List = list( set( ipv6List ) )
 
 # try to remove Empty strings if available
-try:
-  ipv4List.remove('')
-except ValueError:
-  pass
-
-try:
-  ipv6List.remove('')
-except ValueError:
-  pass
+try: ipv4List.remove('')
+except ValueError: pass
+try: ipv6List.remove('')
+except ValueError: pass
 
 # calculate and print changes
 print('Read', previousIpv4s, 'ipv4\'s from ipv4_list.txt')
@@ -149,6 +144,12 @@ with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
 with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
     ipv6List.append( ip.strip() )
+
+# try to remove Empty strings if available
+try: ipv4List.remove('')
+except ValueError: pass
+try: ipv6List.remove('')
+except ValueError: pass
 
 # de-duplicate list entries and sort them
 ipv4List = list( set( ipv4List ) )
