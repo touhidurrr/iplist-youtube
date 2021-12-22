@@ -3,7 +3,7 @@
 wget 'https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed'
 echo "$(grep -oP '^([\w\d.-]+\.)+([\w\d.-]+)?' youtubeparsed)" > youtubeparsed
 
-parallel -P "$(nproc)" -a youtubeparsed '\
+parallel -P "$(nproc)" -j100 -a youtubeparsed '\
 line="{}"
 if [[ ! (-z "$line" || $line =~ \#) ]]; then
   echo "digging $line ..."
