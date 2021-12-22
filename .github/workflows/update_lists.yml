@@ -33,6 +33,7 @@ jobs:
         run: |
           echo 'previos state ...'
           wc -l ipv?_list.txt
+          chmod +x list_generator.sh
           ./list_generator.sh
           echo 'new state ...'
           wc -l ipv?_list.txt
