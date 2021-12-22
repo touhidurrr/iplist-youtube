@@ -70,12 +70,15 @@ download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/cate
 
 # keep previous ips
 with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
-  for ip in f.readlines():
-    ipv4List.append( ip.strip() )
+  ip = ip.strip()
+  if ip != '':
+    ipv4List.append( ip )
 
 with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
-    ipv6List.append( ip.strip() )
+    ip = ip.strip()
+    if ip != '':
+      ipv6List.append( ip )
 
 # count and remember the number of previous entries
 previousIpv4s = len(ipv4List)
@@ -124,12 +127,6 @@ for t in taskList:
 ipv4List = list( set( ipv4List ) )
 ipv6List = list( set( ipv6List ) )
 
-# try to remove Empty strings if available
-try: ipv4List.remove('')
-except ValueError: pass
-try: ipv6List.remove('')
-except ValueError: pass
-
 # calculate and print changes
 print('Read', previousIpv4s, 'ipv4\'s from ipv4_list.txt')
 print('Number of new ipv4 addresses found:', len(ipv4List) - previousIpv4s)
@@ -138,24 +135,21 @@ print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 
 # read the files again. usefull for running the script in background.
 with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
-  for ip in f.readlines():
-    ipv4List.append( ip.strip() )
+  ip = ip.strip()
+  if ip != '':
+    ipv4List.append( ip )
 
 with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
-    ipv6List.append( ip.strip() )
+    ip = ip.strip()
+    if ip != '':
+      ipv6List.append( ip )
 
 # de-duplicate list entries and sort them
 ipv4List = list( set( ipv4List ) )
 ipv6List = list( set( ipv6List ) )
 ipv4List.sort(key=ip_address)
 ipv6List.sort(key=ip_address)
-
-# try to remove Empty strings if available
-try: ipv4List.remove('')
-except ValueError: pass
-try: ipv6List.remove('')
-except ValueError: pass
 
 # now write the ips in files
 with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
