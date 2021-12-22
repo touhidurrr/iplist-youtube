@@ -7,8 +7,8 @@ parallel -P "$(nproc)" -j100 -a youtubeparsed '\
 line="{}"
 if [[ ! (-z "$line" || $line =~ \#) ]]; then
   echo "digging $line ..."
-  dig +noall +short $line -4 >> ipv4_list.txt
-  dig +noall +short $line -6 >> ipv6_list.txt
+  dig +short A $line | grep -v '\.$' >> ipv4_list.txt
+  dig +short AAAA $line | grep -v '\.$' >> ipv6_list.txt
 fi
 '
 
