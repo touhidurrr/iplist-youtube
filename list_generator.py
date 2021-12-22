@@ -145,17 +145,17 @@ with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
     ipv6List.append( ip.strip() )
 
-# try to remove Empty strings if available
-try: ipv4List.remove('')
-except ValueError: pass
-try: ipv6List.remove('')
-except ValueError: pass
-
 # de-duplicate list entries and sort them
 ipv4List = list( set( ipv4List ) )
 ipv6List = list( set( ipv6List ) )
 ipv4List.sort(key=ip_address)
 ipv6List.sort(key=ip_address)
+
+# try to remove Empty strings if available
+try: ipv4List.remove('')
+except ValueError: pass
+try: ipv6List.remove('')
+except ValueError: pass
 
 # now write the ips in files
 with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
