@@ -12,5 +12,5 @@ dig +short AAAA $line | grep -v "\.$" >> ipv6_list.txt
 echo "dig complete for $line ..."
 '
 
-sort -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n ipv4_list.txt -o ipv4_list.txt
-sort ipv6_list.txt -o ipv6_list.txt # for now
+sort -u -t . -k 1,1n -k 2,2n -k 3,3n -k 4,4n ipv4_list.txt -o ipv4_list.txt
+sort -u ipv6_list.txt -o ipv6_list.txt # for now
