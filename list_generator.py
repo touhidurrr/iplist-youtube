@@ -72,14 +72,26 @@ download('https://raw.githubusercontent.com/nickspaargaren/no-google/master/cate
 with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
     ip = ip.strip()
-    if ip != '':
+    try:
+      ip = str( ip_address( ip ) )
       ipv4List.append( ip )
+    except ValueError:
+      if ip != '':
+        print('%s is not a valid IPv4 address!' % ip)
 
 with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
     ip = ip.strip()
-    if ip != '':
+    try:
+      ip = str( ip_address( ip ) )
       ipv6List.append( ip )
+    except ValueError:
+      if ip != '':
+        print('%s is not a valid IPv6 address!' % ip)
+
+# de-duplicate list entries
+ipv4List = list( set( ipv4List ) )
+ipv6List = list( set( ipv6List ) )
 
 # count and remember the number of previous entries
 previousIpv4s = len(ipv4List)
@@ -138,14 +150,22 @@ print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
     ip = ip.strip()
-    if ip != '':
+    try:
+      ip = str( ip_address( ip ) )
       ipv4List.append( ip )
+    except ValueError:
+      if ip != '':
+        print('%s is not a valid IPv4 address!' % ip)
 
 with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
   for ip in f.readlines():
     ip = ip.strip()
-    if ip != '':
+    try:
+      ip = str( ip_address( ip ) )
       ipv6List.append( ip )
+    except ValueError:
+      if ip != '':
+        print('%s is not a valid IPv6 address!' % ip)
 
 # de-duplicate list entries and sort them
 ipv4List = list( set( ipv4List ) )
