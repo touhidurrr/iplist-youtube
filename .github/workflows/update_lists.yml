@@ -1,8 +1,6 @@
 name: Update Lists
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   push:
     paths:
       - 'list_generator*'
