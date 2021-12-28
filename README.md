@@ -58,8 +58,8 @@ Although all **IPs** are not returned at the same time, all have the same purpos
 And different computers use different **IPs** at the same time.
 And so, running the scripts, again and again, is a necessity.
 If you run the scripts more **IPs** should be automatic.
-Personally recommend running the scripts at least **100** times at the interval of **5** minutes or **300** seconds (Google's TTL).
-For reasonable performance, run it **1000** times before using it for production.
+Personally recommend running the scripts at least **7291** times at the interval of **5** minutes or **300** seconds (Google's TTL).
+For reasonable performance, run it **7291** times before using it for production.
 I use such Cron jobs to populate the lists.
 ```cron
 */5 * * * * /path/to/the/script
