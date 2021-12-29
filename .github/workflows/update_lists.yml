@@ -27,14 +27,14 @@ jobs:
       - name: Check Python3 Version
         run: python3 --version
     
-      - name: Run list_generator.sh
-        run: |
-          echo 'previos state ...'
-          wc -l ipv?_list.txt
-          chmod +x list_generator.sh
-          ./list_generator.sh
-          echo 'new state ...'
-          wc -l ipv?_list.txt
+#      - name: Run list_generator.sh
+#        run: |
+#          echo 'previos state ...'
+#          wc -l ipv?_list.txt
+#          chmod +x list_generator.sh
+#          ./list_generator.sh
+#          echo 'new state ...'
+#          wc -l ipv?_list.txt
 
       - name: Installing dnspython-${{ env.dnspython }} and Generating Lists
         run: |
