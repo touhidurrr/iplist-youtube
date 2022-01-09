@@ -6,7 +6,7 @@ We use DNS Lookups to achieve this and the lists are automatically updated appro
 The project is currently STABLE BETA.
 So, not all IPs might be available.
 At present, it has a collection of
-**7496**
+**7503**
 YouTube IPs.
 
 Ipv4 list raw link => [Here!](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/ipv4_list.txt)
@@ -58,8 +58,8 @@ Although all **IPs** are not returned at the same time, all have the same purpos
 And different computers use different **IPs** at the same time.
 And so, running the scripts, again and again, is a necessity.
 If you run the scripts more **IPs** should be automatic.
-Personally recommend running the scripts at least **7496** times at the interval of **5** minutes or **300** seconds (Google's TTL).
-For reasonable performance, run it **7496** times before using it for production.
+Personally recommend running the scripts at least **7503** times at the interval of **5** minutes or **300** seconds (Google's TTL).
+For reasonable performance, run it **7503** times before using it for production.
 I use such Cron jobs to populate the lists.
 ```cron
 */5 * * * * /path/to/the/script
