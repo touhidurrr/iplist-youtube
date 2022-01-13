@@ -45,7 +45,7 @@ jobs:
       - name: Update IP count in README.md
         run: |
           TOTAL_IPS=$(wc -l ipv?_list.txt | grep -oP '\d+(?=\s+total)')
-          sed -i -E "s|\*\*[0-9]+\*\*|**$TOTAL_IPS**|" README.md
+          sed -i -E "s|$(cat README.md | grep -oP '^\*\*\d+\*\*$')|**$TOTAL_IPS**|" README.md
 
       - name: Commit changes
         run: |
