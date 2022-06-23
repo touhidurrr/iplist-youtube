@@ -6,7 +6,7 @@ We use DNS Lookups to achieve this and the lists are automatically updated appro
 The project is currently STABLE BETA.
 So, not all IPs might be available.
 At present, it has a collection of
-**11548**
+**11549**
 YouTube IPs.
 
 Ipv4 list raw link => [Here!](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/ipv4_list.txt)
