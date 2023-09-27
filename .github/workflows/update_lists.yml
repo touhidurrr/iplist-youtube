@@ -15,14 +15,15 @@ jobs:
       dnspython: '2.1.0'
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT }}
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ env.python }}
+          cache: 'pip'
 
       - name: Check Python3 Version
         run: python3 --version
