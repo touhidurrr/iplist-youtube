@@ -55,4 +55,4 @@ jobs:
           git push
 
       - name: Check diff
-        run: git diff HEAD..HEAD~1
+        run: git diff --quiet || git diff HEAD..HEAD~1
