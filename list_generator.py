@@ -56,7 +56,12 @@ taskList = []
 def fetch_ip(URL, Query, List):
 
   # get ips
-  ips = res.resolve(URL, Query)
+  try:
+    ips = res.resolve(URL, Query)
+  except Exception as e:
+    print(str())
+    return
+
   ips = [str(i) for i in ips]
 
   # print ips format 'example.com IN A [192.0.2.1, ...]'
@@ -118,7 +123,7 @@ with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
     taskList.append(Thread(target=fetch_ip, args=(url, 'A', ipv4List)))
     taskList.append(Thread(target=fetch_ip, args=(url, 'AAAA', ipv6List)))
 
-"""    
+"""
 # start the tasks in threads
 threads = 16
 taskNumber = len(taskList)
