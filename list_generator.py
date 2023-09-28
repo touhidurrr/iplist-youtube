@@ -59,7 +59,7 @@ def fetch_ip(URL, Query, List):
   try:
     ips = res.resolve(URL, Query)
   except Exception as e:
-    print(str())
+    print(str(e))
     return
 
   ips = [str(i) for i in ips]
