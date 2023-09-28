@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Check Python3 Version
         run: python3 --version
-    
+
 #      - name: Run list_generator.sh
 #        run: |
 #          echo 'previos state ...'
@@ -47,14 +47,14 @@ jobs:
           TOTAL_IPS=$(wc -l ipv?_list.txt | grep -oP '\d+(?=\s+total)')
           sed -i "s|$(cat README.md | grep -oP '\d+(?=\*\*$)')|$TOTAL_IPS|1" README.md
 
+      - name: Check diff
+        run: git diff HEAD..HEAD~1
+
       - name: Commit changes
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
           git config --local user.name 'touhidurrr'
           git add ipv?_list.txt README.md
-          git diff --quiet || git commit -m "Updated Lists [Automated]"
+          git commit -m 'Updated Lists [Automated]'
           git pull
           git push
-
-      - name: Check diff
-        run: git diff --quiet || git diff HEAD..HEAD~1
