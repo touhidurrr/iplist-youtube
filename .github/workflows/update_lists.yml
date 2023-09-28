@@ -20,7 +20,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.x # ${{ env.python }}
+          python-version: ${{ env.python }}
 
       - name: Check Python3 Version
         run: python3 --version
@@ -34,11 +34,13 @@ jobs:
 #          echo 'new state ...'
 #          wc -l ipv?_list.txt
 
-      - name: Installing dnspython-${{ env.dnspython }} and Generating Lists
+      - name: Installing dnspython-${{ env.dnspython }}
         run: |
           pip3 install --upgrade pip
           pip3 install -I dnspython==${{ env.dnspython }}
-          python3 ./list_generator.py
+      
+      - name: Generating Lists
+        run: python3 ./list_generator.py
 
       - name: Update IP count in README.md
         run: |
