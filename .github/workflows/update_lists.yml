@@ -47,9 +47,6 @@ jobs:
           TOTAL_IPS=$(wc -l ipv?_list.txt | grep -oP '\d+(?=\s+total)')
           sed -i "s|$(cat README.md | grep -oP '\d+(?=\*\*$)')|$TOTAL_IPS|1" README.md
 
-      - name: Check diff
-        run: git diff
-
       - name: Commit changes
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
@@ -58,3 +55,6 @@ jobs:
           git commit -m 'Updated Lists [Automated]'
           git pull
           git push
+
+      - name: Check diff
+        run: git diff HEAD..HEAD~1
