@@ -48,7 +48,7 @@ jobs:
           sed -i "s|$(cat README.md | grep -oP '\d+(?=\*\*$)')|$TOTAL_IPS|1" README.md
 
       - name: Check diff
-        run: git diff HEAD..HEAD~1
+        run: git diff
 
       - name: Commit changes
         run: |
