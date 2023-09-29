@@ -34,12 +34,10 @@ It should only be necessary once.
 ```bash
 sudo apt install sort dig grep parallel aria2c
 ```
-For the `.py` file, you need to install `dnspython`.
-Version `2.4.2` is recommended.
-Recent versions might also work although not tested.
+For the `.py` file, you need to install dependencies.
 This is only necessary once.
 ```bash
-pip3 install -I dnspython==2.4.2
+pip3 install -r requirements.txt
 ```
 Then run:
 ```bash
