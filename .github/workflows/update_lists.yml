@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'list_generator*'
+      - 'requirements.txt'
+      - 'dns_resolvers.yml'
       - '.github/workflows/update_lists.yml'
   workflow_dispatch:
 
