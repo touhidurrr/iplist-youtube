@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.python }}
+          cache: 'pip'
 
       - name: Check Python3 Version
         run: python3 --version
@@ -37,8 +38,8 @@ jobs:
       - name: Installing dnspython-${{ env.dnspython }}
         run: |
           pip3 install --upgrade pip
-          pip3 install -I dnspython==${{ env.dnspython }}
-      
+          pip3 install -r requirements.txt
+
       - name: Generating Lists
         run: python3 ./list_generator.py
 
