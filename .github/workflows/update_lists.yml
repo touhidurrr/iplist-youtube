@@ -10,9 +10,6 @@ on:
 jobs:
   update-lists:
     runs-on: ubuntu-latest
-    env:
-      python: '3.x'
-      dnspython: '2.4.2'
 
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +17,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ env.python }}
+          python-version: '3.x'
           cache: 'pip'
 
       - name: Check Python3 Version
@@ -35,7 +32,7 @@ jobs:
 #          echo 'new state ...'
 #          wc -l ipv?_list.txt
 
-      - name: Installing dnspython-${{ env.dnspython }}
+      - name: Install Dependencies
         run: |
           pip3 install --upgrade pip
           pip3 install -r requirements.txt
