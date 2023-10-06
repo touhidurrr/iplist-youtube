@@ -1,6 +1,6 @@
 #!/bin/python3
-from dns import resolver
-from threading import Thread
+import asyncio
+from dns import asyncresolver
 from ipaddress import ip_address
 from urllib.request import urlretrieve as download
 
@@ -11,18 +11,18 @@ def get_ip_fetcher():
   except ImportError:
     from yaml import Loader
 
-  res = resolver.Resolver(configure=False)
+  ares = asyncresolver.Resolver(configure=False)
 
   # load resolvers from dns_resolvers.yaml
   resolvers_file = open('dns_resolvers.yml', mode = 'r', encoding = 'utf-8')
-  res.nameservers = load(resolvers_file, Loader=Loader)
+  ares.nameservers = load(resolvers_file, Loader=Loader)
   resolvers_file.close()
 
   # make ip_fetcher
-  def ip_fetcher(domain, query, ipList):
+  async def ip_fetcher(domain, query, ipList):
     # get ips
     try:
-      ips = res.resolve(domain, query)
+      ips = await ares.resolve(domain, query)
     except Exception as e:
       print(str(e))
       return
@@ -67,9 +67,9 @@ def download_youtubeparsed():
   url = 'https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed'
   download(url, 'youtubeparsed')
 
-def get_threads(ipv4List, ipv6List, ip_fetcher):
+def get_coroutines(ipv4List, ipv6List, ip_fetcher):
   # make a list of threads
-  threads = []
+  coroutines = []
 
   # open the youtubeparsed file
   with open('youtubeparsed', mode = 'r', encoding = 'utf-8') as f:
@@ -89,10 +89,10 @@ def get_threads(ipv4List, ipv6List, ip_fetcher):
         continue
 
       # make a thread for each fetch_ip call
-      threads.append(Thread(target=ip_fetcher, args=(url, 'A', ipv4List)))
-      threads.append(Thread(target=ip_fetcher, args=(url, 'AAAA', ipv6List)))
+      coroutines.append(ip_fetcher(url, 'A', ipv4List))
+      coroutines.append(ip_fetcher(url, 'AAAA', ipv6List))
 
-  return threads
+  return coroutines
 
 def write_ips(ipv4List, ipv6List):
   # de-duplicate list entries
@@ -111,7 +111,7 @@ def write_ips(ipv4List, ipv6List):
 
     f.write('\n'.join(ipv6List) + '\n')
 
-def main():
+async def main():
   # make a list of ips
   ipv4List = []
   ipv6List = []
@@ -129,15 +129,11 @@ def main():
   # get ip fetcher
   ip_fetcher = get_ip_fetcher()
 
-  # get threads list
-  threads = get_threads(ipv4List, ipv6List, ip_fetcher)
+  # get coroutines
+  coroutines = get_coroutines(ipv4List, ipv6List, ip_fetcher)
 
-  # start all threads
-  for t in threads:
-    t.start()
-  # and wait for them to finish
-  for t in threads:
-    t.join()
+  # wait for coroutines to finish
+  await asyncio.gather(*coroutines)
 
   # de-duplicate list entries
   ipv4List = list( set( ipv4List ) )
@@ -156,4 +152,4 @@ def main():
   write_ips(ipv4List, ipv6List)
 
 if __name__ == '__main__':
-  main()
+  asyncio.run(main())
