@@ -43,7 +43,7 @@ jobs:
         run: python3 ./list_generator.py
 
       - name: Generating CIDR Lists
-        run: python3 ./generate_cidr.py.py
+        run: python3 ./generate_cidr.py
 
       - name: Update IP count in README.md
         run: |
