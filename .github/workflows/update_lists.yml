@@ -39,8 +39,11 @@ jobs:
           pip3 install --upgrade pip
           pip3 install -r requirements.txt
 
-      - name: Generating Lists
+      - name: Generating IP Lists
         run: python3 ./list_generator.py
+
+      - name: Generating CIDR Lists
+        run: python3 ./generate_cidr.py.py
 
       - name: Update IP count in README.md
         run: |

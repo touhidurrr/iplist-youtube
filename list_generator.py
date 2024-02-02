@@ -1,8 +1,10 @@
 #!/bin/python3
 import asyncio
 from dns import asyncresolver
-from ipaddress import ip_address
 from urllib.request import urlretrieve as download
+from ipaddress import ip_address, IPv4Address, IPv6Address
+
+type IPList = list[IPv4Address | IPv6Address]
 
 def get_ip_fetcher():
   from yaml import load
@@ -19,7 +21,7 @@ def get_ip_fetcher():
   resolvers_file.close()
 
   # make ip_fetcher
-  async def ip_fetcher(domain, query, ipList):
+  async def ip_fetcher(domain: str, query: str, ipList: IPList):
     # get ips
     try:
       ips = await ares.resolve(domain, query)
@@ -27,7 +29,7 @@ def get_ip_fetcher():
       print(str(e))
       return
 
-    ips = [str(i) for i in ips]
+    ips = [ip_address(i) for i in ips]
 
     # print ips format 'example.com IN A [192.0.2.1, ...]'
     print(domain, 'IN', query, ips)
@@ -37,12 +39,12 @@ def get_ip_fetcher():
 
   return ip_fetcher
 
-def read_ips(ipv4List, ipv6List):
+def read_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
   with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
     for ip in f.readlines():
       ip = ip.strip()
       try:
-        ip = str( ip_address( ip ) )
+        ip = ip_address( ip )
         ipv4List.append( ip )
       except ValueError:
         if ip != '':
@@ -52,7 +54,7 @@ def read_ips(ipv4List, ipv6List):
     for ip in f.readlines():
       ip = ip.strip()
       try:
-        ip = str( ip_address( ip ) )
+        ip = ip_address( ip )
         ipv6List.append( ip )
       except ValueError:
         if ip != '':
@@ -67,7 +69,7 @@ def download_youtubeparsed():
   url = 'https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed'
   download(url, 'youtubeparsed')
 
-def get_coroutines(ipv4List, ipv6List, ip_fetcher):
+def get_coroutines(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address], ip_fetcher):
   # make a list of threads
   coroutines = []
 
@@ -94,27 +96,27 @@ def get_coroutines(ipv4List, ipv6List, ip_fetcher):
 
   return coroutines
 
-def write_ips(ipv4List, ipv6List):
+def write_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
   # de-duplicate list entries
   ipv4List = list( set( ipv4List ) )
   ipv6List = list( set( ipv6List ) )
 
   # sort ips before writing
-  ipv4List.sort(key=ip_address)
-  ipv6List.sort(key=ip_address)
+  ipv4List.sort()
+  ipv6List.sort()
 
   with open('ipv4_list.txt', mode = 'w', encoding = 'utf-8') as f:
 
-    f.write('\n'.join(ipv4List) + '\n')
+    f.write('\n'.join(map(str, ipv4List)) + '\n')
 
   with open('ipv6_list.txt', mode = 'w', encoding = 'utf-8') as f:
 
-    f.write('\n'.join(ipv6List) + '\n')
+    f.write('\n'.join(map(str, ipv6List)) + '\n')
 
 async def main():
   # make a list of ips
-  ipv4List = []
-  ipv6List = []
+  ipv4List: list[IPv4Address] = []
+  ipv6List: list[IPv6Address] = []
 
   # read previous ips
   read_ips(ipv4List, ipv6List)
