@@ -10,8 +10,10 @@ At present, it has a collection of
 YouTube IPs.
 
 Ipv4 list raw link => [Here!](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/ipv4_list.txt)
+***New!*** CIDR List => [Here!](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/cidr4.txt)
 
 Ipv6 list raw link => [Here!](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/ipv6_list.txt)
+***New!*** CIDR List => [Here!](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/cidr6.txt)
 
 Used open source lists:
   1. https://github.com/nickspaargaren/no-google/blob/master/categories/youtubeparsed
@@ -47,6 +49,10 @@ chmod +x list_generator.py
 If this doesn't work, try:
 ```bash
 python3 list_generator.py
+```
+***New!*** To generate CIDR lists use `generate_cidr.py`
+```py
+python3 generate_cidr.py
 ```
 #### Important Notes
 Using any of these scripts once is not enough.
