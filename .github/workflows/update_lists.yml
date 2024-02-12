@@ -3,7 +3,7 @@ name: Update Lists
 on:
   push:
     paths:
-      - 'list_generator*'
+      - '*.py'
       - 'requirements.txt'
       - 'dns_resolvers.yml'
       - '.github/workflows/update_lists.yml'
