@@ -58,7 +58,8 @@ def main():
   read_ips(ipv4List, ipv6List)
 
   cidr4 = makeCIDRRangesList(ipv4List)
-  cidr6 = makeCIDRRangesList(ipv6List)
+  # for IPv6, a 64 bit mask is not extensive
+  cidr6 = makeCIDRRangesList(ipv6List, 64)
 
   with open('cidr4.txt', mode = 'w', encoding = 'utf-8') as f:
 
