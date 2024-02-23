@@ -18,11 +18,11 @@ def get_ip_fetcher():
 
   # load resolvers from dns_resolvers.yaml
   resolvers_file = open('dns_resolvers.yml', mode = 'r', encoding = 'utf-8')
-  ares.nameservers = load(resolvers_file, Loader=Loader)
+  resolvers = load(resolvers_file, Loader=Loader)
   resolvers_file.close()
 
-  # shuffle nameservers in hopes of finding more ips
-  ares.nameservers = shuffle(ares.nameservers)
+  # shuffle resolvers in hopes of finding more ips
+  ares.nameservers = shuffle(resolvers)
 
   # make ip_fetcher
   async def ip_fetcher(domain: str, query: str, ipList: IPList):
