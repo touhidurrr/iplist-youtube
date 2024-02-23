@@ -1,5 +1,6 @@
 #!/bin/python3
 import asyncio
+from random import shuffle
 from dns import asyncresolver
 from urllib.request import urlretrieve as download
 from ipaddress import ip_address, IPv4Address, IPv6Address
@@ -19,6 +20,9 @@ def get_ip_fetcher():
   resolvers_file = open('dns_resolvers.yml', mode = 'r', encoding = 'utf-8')
   ares.nameservers = load(resolvers_file, Loader=Loader)
   resolvers_file.close()
+
+  # shuffle nameservers in hopes of finding more ips
+  ares.nameservers = shuffle(ares.nameservers)
 
   # make ip_fetcher
   async def ip_fetcher(domain: str, query: str, ipList: IPList):
