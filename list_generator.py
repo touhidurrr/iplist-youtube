@@ -105,9 +105,19 @@ def get_coroutines(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address], ip_
   return coroutines
 
 def write_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
-  # de-duplicate list entries
-  ipv4List = list( set( ipv4List ) )
-  ipv6List = list( set( ipv6List ) )
+  # convert to set to de-duplicate list entries
+  ipv4Set = set( ipv4List )
+  ipv6Set = set( ipv6List )
+
+  # remove null ips
+  ipv4Set.discard( ip_address('0.0.0.0') )
+  ipv6Set.discard( ip_address('::') )
+  ipv6Set.discard( ip_address('::ffff:0:0') )
+  ipv6Set.discard( ip_address('::ffff:7f00:1') )
+
+  # convert back to list
+  ipv4List = list( ipv4Set )
+  ipv6List = list( ipv6Set )
 
   # sort ips before writing
   ipv4List.sort()
