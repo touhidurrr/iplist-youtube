@@ -21,6 +21,10 @@ def get_ip_fetcher():
   ares.nameservers = load(resolvers_file, Loader=Loader)
   resolvers_file.close()
 
+  # specify timeout and lifetime
+  ares.timeout = 10
+  ares.lifetime = 10
+
   # shuffle resolvers in hopes of finding more ips
   shuffle(ares.nameservers)
 
