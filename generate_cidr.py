@@ -2,33 +2,35 @@ from ipaddress import ip_address, IPv4Address, IPv6Address, summarize_address_ra
 
 type IPList = list[IPv4Address | IPv6Address]
 
+
 def read_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
-  with open('ipv4_list.txt', mode = 'r', encoding = 'utf-8') as f:
+  with open('ipv4_list.txt', mode='r', encoding='utf-8') as f:
     for ip in f.readlines():
       ip = ip.strip()
       try:
-        ip = ip_address( ip )
-        ipv4List.append( ip )
+        ip = ip_address(ip)
+        ipv4List.append(ip)
       except ValueError:
         if ip != '':
           print('%s is not a valid IPv4 address!' % ip)
 
-  with open('ipv6_list.txt', mode = 'r', encoding = 'utf-8') as f:
+  with open('ipv6_list.txt', mode='r', encoding='utf-8') as f:
     for ip in f.readlines():
       ip = ip.strip()
       try:
-        ip = ip_address( ip )
-        ipv6List.append( ip )
+        ip = ip_address(ip)
+        ipv6List.append(ip)
       except ValueError:
         if ip != '':
           print('%s is not a valid IPv6 address!' % ip)
 
-def makeCIDRRangesList(ipList: list[IPv4Address | IPv6Address], maskLastNBits = 8):
+
+def makeCIDRRangesList(ipList: list[IPv4Address | IPv6Address], maskLastNBits=8):
   maskLen = 1 << maskLastNBits
 
   def getFirstLastIps(ip):
     isIPv4 = type(ip) == IPv4Address
-    mask = (1<<32) - maskLen if isIPv4 else (1<<128) - maskLen
+    mask = (1 << 32) - maskLen if isIPv4 else (1 << 128) - maskLen
     first = int(ip) & mask
     first = IPv4Address(first) if isIPv4 else IPv6Address(first)
     return first, first + (maskLen - 1)
@@ -61,13 +63,14 @@ def main():
   # for IPv6, a 64 bit mask is not extensive
   cidr6 = makeCIDRRangesList(ipv6List, 64)
 
-  with open('cidr4.txt', mode = 'w', encoding = 'utf-8') as f:
+  with open('cidr4.txt', mode='w', encoding='utf-8') as f:
 
     f.write('\n'.join(map(str, cidr4)) + '\n')
 
-  with open('cidr6.txt', mode = 'w', encoding = 'utf-8') as f:
+  with open('cidr6.txt', mode='w', encoding='utf-8') as f:
 
     f.write('\n'.join(map(str, cidr6)) + '\n')
+
 
 if __name__ == '__main__':
   main()
