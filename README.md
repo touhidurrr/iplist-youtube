@@ -1,7 +1,7 @@
 # iplist-youtube
-An attempt list of all IPs that youtube uses.
+An attempt to list all IPs that YouTube uses.
 
-This is a list that keeps all ipv4 and ipv6 addresses used by Youtube.
+This list attempts to keep all ipv4 and ipv6 addresses used by YouTube.
 We use DNS Lookups to achieve this and the lists are automatically updated approximately every 5 minutes.
 The project is currently STABLE BETA.
 So, not all IPs might be available.
@@ -26,7 +26,7 @@ This is because the `list_generator.sh` uses an underlining tool called `dig` wh
 It has a little chance of listing some wrong **IPs** In some cases.
 With a warning or error.
 
-to use the `list_generator.sh` file run this commands in the folder cantainng the files.
+To use the `list_generator.sh` file run these commands in the folder containing the files.
 ```bash
 chmod +x list_generator.sh
 ./list_generator.sh
