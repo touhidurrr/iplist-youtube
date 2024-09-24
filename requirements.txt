@@ -1,2 +1,2 @@
 dnspython~=2.6.1
-PyYAML~=6.0.1
+PyYAML~=6.0.2
