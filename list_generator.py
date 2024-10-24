@@ -6,7 +6,12 @@ from urllib.request import urlretrieve as download
 
 from dns import asyncresolver
 
-type IPList = list[IPv4Address | IPv6Address]
+type IP = IPv4Address | IPv6Address
+type IPList = list[IP]
+
+
+def isGlobalIP(ip: IP) -> bool:
+  return ip.is_global
 
 
 def get_ip_fetcher():
@@ -45,7 +50,7 @@ def get_ip_fetcher():
     print(domain, 'IN', query, ips)
 
     # append the ips for listing
-    ipList += filter(lambda ip: ip.is_global, ips)
+    ipList += filter(isGlobalIP, ips)
 
   return ip_fetcher
 
@@ -114,21 +119,9 @@ def get_coroutines(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address], ip_
 
 
 def write_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
-  # convert to set to de-duplicate list entries
-  ipv4Set = set(ipv4List)
-  ipv6Set = set(ipv6List)
-
-  # remove null ips
-  ipv4Set.discard(ip_address('0.0.0.0'))
-  ipv4Set.discard(ip_address('127.0.0.1'))
-  ipv6Set.discard(ip_address('::'))
-  ipv6Set.discard(ip_address('::1'))
-  ipv6Set.discard(ip_address('::ffff:0:0'))
-  ipv6Set.discard(ip_address('::ffff:7f00:1'))
-
-  # convert back to list
-  ipv4List = list(ipv4Set)
-  ipv6List = list(ipv6Set)
+  # filter non-global ips
+  ipv4List = filter(isGlobalIP, ipv4List)
+  ipv6List = filter(isGlobalIP, ipv6List)
 
   # sort ips before writing
   ipv4List.sort()
