@@ -118,6 +118,7 @@ def write_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
 
   # remove null ips
   ipv4Set.discard(ip_address('0.0.0.0'))
+  ipv4Set.discard(ip_address('127.0.0.1'))
   ipv6Set.discard(ip_address('::'))
   ipv6Set.discard(ip_address('::1'))
   ipv6Set.discard(ip_address('::ffff:0:0'))
