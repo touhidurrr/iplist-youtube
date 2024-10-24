@@ -1,3 +1,5 @@
 .**
+!.github/
+!.gitignore
 youtubeparsed
 __pycache__/

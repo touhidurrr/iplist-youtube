@@ -24,16 +24,14 @@ def get_ip_fetcher():
   ares = asyncresolver.Resolver(configure=False)
 
   # load resolvers from dns_resolvers.yaml
-  resolvers_file = open('dns_resolvers.yml', mode='r', encoding='utf-8')
-  ares.nameservers = load(resolvers_file, Loader=Loader)
-  resolvers_file.close()
+  with open('dns_resolvers.yml', mode='r', encoding='utf-8') as resolvers_file:
+    dns_resolvers: dict[str, list[str]] = load(resolvers_file, Loader=Loader)
+    dns_resolver_ips = [ip for ips in dns_resolvers.values() for ip in ips]
+    ares.nameservers = shuffle(dns_resolver_ips)
 
   # specify timeout and lifetime
   ares.timeout = 10
   ares.lifetime = 10
-
-  # shuffle resolvers in hopes of finding more ips
-  shuffle(ares.nameservers)
 
   # make ip_fetcher
   async def ip_fetcher(domain: str, query: str, ipList: IPList):

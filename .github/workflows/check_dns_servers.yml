@@ -1,0 +1,31 @@
+name: Check DNS Servers
+
+on:
+  push:
+    paths:
+      - "check_dns_servers.py"
+  workflow_dispatch:
+
+jobs:
+  update-lists:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: Check Python3 Version
+        run: python3 --version
+
+      - name: Install Dependencies
+        run: |
+          pip3 install --upgrade pip
+          pip3 install -r requirements.txt
+
+      - name: Check DNS Servers Availability
+        run: python3 ./check_dns_servers.py
