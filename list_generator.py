@@ -145,7 +145,7 @@ def write_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
 
 async def main():
   # make a list of ips
-  (ipv4List, ipv6List) = read_ips()
+  ipv4List, ipv6List = read_ips()
 
   # count and remember the number of previous entries
   previousIpv4s = len(ipv4List)
@@ -174,7 +174,7 @@ async def main():
   print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 
   # read ips again (resolves some errors)
-  (ipv4List, ipv6List) = read_ips(ipv4List, ipv6List)
+  ipv4List, ipv6List = read_ips(ipv4List, ipv6List)
 
   # now write the ips in files
   write_ips(ipv4List, ipv6List)
