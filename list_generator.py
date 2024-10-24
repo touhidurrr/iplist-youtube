@@ -27,7 +27,11 @@ def get_ip_fetcher():
   with open('dns_resolvers.yml', mode='r', encoding='utf-8') as resolvers_file:
     dns_resolvers: dict[str, list[str]] = load(resolvers_file, Loader=Loader)
     dns_resolver_ips = [ip for ips in dns_resolvers.values() for ip in ips]
-    ares.nameservers = shuffle(dns_resolver_ips)
+
+    # shuffle the list to possibly get more ips
+    shuffle(dns_resolver_ips)
+
+    ares.nameservers = dns_resolver_ips
 
   # specify timeout and lifetime
   ares.timeout = 10
