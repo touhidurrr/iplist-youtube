@@ -34,6 +34,8 @@ def makeCIDRRangesList(ipList: IPList, maskLastNBits=8):
 
 def main():
   ipv4List, ipv6List = read_ips()
+  ipv4List.sort()
+  ipv6List.sort()
 
   cidr4 = makeCIDRRangesList(ipv4List)
   # for IPv6, a 64 bit mask is not extensive
