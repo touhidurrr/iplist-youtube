@@ -50,7 +50,7 @@ def get_ip_fetcher():
     print(domain, 'IN', query, ips)
 
     # append the ips for listing
-    ipList += filter(isGlobalIP, ips)
+    ipList += list(filter(isGlobalIP, ips))
 
   return ip_fetcher
 
@@ -120,8 +120,8 @@ def get_coroutines(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address], ip_
 
 def write_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
   # filter non-global ips
-  ipv4List = filter(isGlobalIP, ipv4List)
-  ipv6List = filter(isGlobalIP, ipv6List)
+  ipv4List = list(filter(isGlobalIP, ipv4List))
+  ipv6List = list(filter(isGlobalIP, ipv6List))
 
   # sort ips before writing
   ipv4List.sort()
