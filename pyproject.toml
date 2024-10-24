@@ -16,6 +16,7 @@ pyyaml = "^6.0.2"
 in-place = true
 recursive = true
 indent-size = 2
+line-width = 100
 ignore = "E121"
 
 

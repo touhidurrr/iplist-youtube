@@ -55,14 +55,20 @@ def get_ip_fetcher():
   return ip_fetcher
 
 
-def read_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
+def read_ips(
+  ipv4List: list[IPv4Address] = [],
+  ipv6List: list[IPv6Address] = []
+) -> tuple[list[IPv4Address], list[IPv6Address]]:
+  ipv4Set: set[IPv4Address] = set(ipv4List)
+  ipv6Set: set[IPv6Address] = set(ipv6List)
+
   with open('ipv4_list.txt', mode='r', encoding='utf-8') as f:
     for ip in f.readlines():
       ip = ip.strip()
       try:
         ip = ip_address(ip)
         if ip.is_global:
-          ipv4List.append(ip)
+          ipv4Set.add(ip)
       except ValueError:
         if ip != '':
           print('%s is not a valid IPv4 address!' % ip)
@@ -73,14 +79,12 @@ def read_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
       try:
         ip = ip_address(ip)
         if ip.is_global:
-          ipv6List.append(ip)
+          ipv6Set.add(ip)
       except ValueError:
         if ip != '':
           print('%s is not a valid IPv6 address!' % ip)
 
-  # de-duplicate list entries
-  ipv4List = list(set(ipv4List))
-  ipv6List = list(set(ipv6List))
+  return (list(ipv4Set), list(ipv6Set))
 
 # download youtubeparsed
 
@@ -90,7 +94,10 @@ def download_youtubeparsed():
   download(url, 'youtubeparsed')
 
 
-def get_coroutines(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address], ip_fetcher):
+def get_coroutines(
+  ipv4List: list[IPv4Address],
+  ipv6List: list[IPv6Address],
+        ip_fetcher):
   # make a list of threads
   coroutines = []
 
@@ -138,11 +145,7 @@ def write_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
 
 async def main():
   # make a list of ips
-  ipv4List: list[IPv4Address] = []
-  ipv6List: list[IPv6Address] = []
-
-  # read previous ips
-  read_ips(ipv4List, ipv6List)
+  (ipv4List, ipv6List) = read_ips()
 
   # count and remember the number of previous entries
   previousIpv4s = len(ipv4List)
@@ -171,7 +174,7 @@ async def main():
   print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 
   # read ips again (resolves some errors)
-  read_ips(ipv4List, ipv6List)
+  (ipv4List, ipv6List) = read_ips(ipv4List, ipv6List)
 
   # now write the ips in files
   write_ips(ipv4List, ipv6List)
