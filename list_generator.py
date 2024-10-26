@@ -86,7 +86,7 @@ def read_ips(
         if ip != '':
           print('%s is not a valid IPv6 address!' % ip)
 
-  return (list(ipv4Set), list(ipv6Set))
+  return list(ipv4Set), list(ipv6Set)
 
 # download youtubeparsed
 
