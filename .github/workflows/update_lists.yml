@@ -45,13 +45,13 @@ jobs:
 
       - name: Generating CIDR Lists
         run: python3 ./src/generate_cidr.py
-      
+
       - name: Generating RouterOS Lists
         run: python3 ./src/router_os_list.py
 
       - name: Update IP count in README.md
         run: |
-          TOTAL_IPS=$(wc -l lists/.ipv?.txt | grep -oP '\d+(?=\s+total)')
+          TOTAL_IPS=$(wc -l lists/ipv?.txt | grep -oP '\d+(?=\s+total)')
           sed -i "s|$(cat README.md | grep -oP '\d+(?=\*\*$)')|$TOTAL_IPS|1" README.md
 
       - name: Commit changes

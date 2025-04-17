@@ -3,11 +3,12 @@ name: Check DNS Servers
 on:
   push:
     paths:
-      - "src/check_dns_servers.py"
+      - src/check_dns_servers.py
+      - .github/workflows/check_dns_servers.yml
   workflow_dispatch:
 
 jobs:
-  update-lists:
+  check-dns-resolvers:
     runs-on: ubuntu-latest
 
     steps:
