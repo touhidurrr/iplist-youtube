@@ -6,6 +6,8 @@ from urllib.request import urlretrieve as download
 
 from dns import asyncresolver
 
+import constants
+
 type IP = IPv4Address | IPv6Address
 type IPList = list[IP]
 
@@ -24,7 +26,7 @@ def get_ip_fetcher():
   ares = asyncresolver.Resolver(configure=False)
 
   # load resolvers from dns_resolvers.yaml
-  with open('dns_resolvers.yml', mode='r', encoding='utf-8') as resolvers_file:
+  with open(constants.DNS_RESOLVER_LIST_PATH, mode='r', encoding='utf-8') as resolvers_file:
     dns_resolvers: dict[str, list[str]] = load(resolvers_file, Loader=Loader)
     dns_resolver_ips = [ip for ips in dns_resolvers.values() for ip in ips]
 
@@ -64,7 +66,7 @@ def read_ips(
   ipv4Set: set[IPv4Address] = set(ipv4List)
   ipv6Set: set[IPv6Address] = set(ipv6List)
 
-  with open('ipv4_list.txt', mode='r', encoding='utf-8') as f:
+  with open(constants.IPv4_LIST_PATH, mode='r', encoding='utf-8') as f:
     for ip in f.readlines():
       ip = ip.strip()
       try:
@@ -73,9 +75,9 @@ def read_ips(
           ipv4Set.add(ip)
       except ValueError:
         if ip != '':
-          print('%s is not a valid IPv4 address!' % ip)
+          print(f'{ip} is not a valid IPv4 address!')
 
-  with open('ipv6_list.txt', mode='r', encoding='utf-8') as f:
+  with open(constants.IPv6_LIST_PATH, mode='r', encoding='utf-8') as f:
     for ip in f.readlines():
       ip = ip.strip()
       try:
@@ -84,7 +86,7 @@ def read_ips(
           ipv6Set.add(ip)
       except ValueError:
         if ip != '':
-          print('%s is not a valid IPv6 address!' % ip)
+          print(f'{ip} is not a valid IPv6 address!')
 
   return list(ipv4Set), list(ipv6Set)
 
@@ -93,7 +95,7 @@ def read_ips(
 
 def download_youtubeparsed():
   url = 'https://raw.githubusercontent.com/nickspaargaren/no-google/master/categories/youtubeparsed'
-  download(url, 'youtubeparsed')
+  download(url, '.youtubeparsed')
 
 
 def get_coroutines(
@@ -104,7 +106,7 @@ def get_coroutines(
   coroutines = []
 
   # open the youtubeparsed file
-  with open('youtubeparsed', mode='r', encoding='utf-8') as f:
+  with open('.youtubeparsed', mode='r', encoding='utf-8') as f:
 
     # for each url in the file
     for url in f.readlines():
@@ -136,11 +138,11 @@ def write_ips(ipv4List: list[IPv4Address], ipv6List: list[IPv6Address]):
   ipv4List.sort()
   ipv6List.sort()
 
-  with open('ipv4_list.txt', mode='w', encoding='utf-8') as f:
+  with open(constants.IPv4_LIST_PATH, mode='w', encoding='utf-8') as f:
 
     f.write('\n'.join(map(str, ipv4List)) + '\n')
 
-  with open('ipv6_list.txt', mode='w', encoding='utf-8') as f:
+  with open(constants.IPv6_LIST_PATH, mode='w', encoding='utf-8') as f:
 
     f.write('\n'.join(map(str, ipv6List)) + '\n')
 
@@ -170,9 +172,9 @@ async def main():
   ipv6List = list(set(ipv6List))
 
   # calculate and print changes
-  print('Read', previousIpv4s, 'ipv4\'s from ipv4_list.txt')
+  print(f'Read {previousIpv4s} ipv4\'s from {constants.IPv4_LIST_PATH}')
   print('Number of new ipv4 addresses found:', len(ipv4List) - previousIpv4s)
-  print('Read', previousIpv6s, 'ipv6\'s from ipv6_list.txt')
+  print(f'Read {previousIpv6s} ipv6\'s from {constants.IPv6_LIST_PATH}')
   print('Number of new ipv6 addresses found:', len(ipv6List) - previousIpv6s)
 
   # read ips again (resolves some errors)

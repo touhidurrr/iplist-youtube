@@ -3,10 +3,10 @@ name: Update Lists
 on:
   push:
     paths:
-      - '*.py'
-      - 'requirements.txt'
-      - 'dns_resolvers.yml'
-      - '.github/workflows/update_lists.yml'
+      - "**.py"
+      - "**.sh"
+      - "**.yml"
+      - "**.toml"
   workflow_dispatch:
 
 jobs:
@@ -19,21 +19,21 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: "3.13"
           check-latest: true
-          cache: 'pip'
+          cache: "pip"
 
       - name: Check Python3 Version
         run: python3 --version
 
-#      - name: Run list_generator.sh
-#        run: |
-#          echo 'previos state ...'
-#          wc -l ipv?_list.txt
-#          chmod +x list_generator.sh
-#          ./list_generator.sh
-#          echo 'new state ...'
-#          wc -l ipv?_list.txt
+      #      - name: Run list_generator.sh
+      #        run: |
+      #          echo 'previous state ...'
+      #          wc -l ipv?_list.txt
+      #          chmod +x list_generator.sh
+      #          ./src/list_generator.sh
+      #          echo 'new state ...'
+      #          wc -l ipv?_list.txt
 
       - name: Install Dependencies
         run: |
@@ -41,10 +41,13 @@ jobs:
           pip3 install -r requirements.txt
 
       - name: Generating IP Lists
-        run: python3 ./list_generator.py
+        run: python3 ./src/list_generator.py
 
       - name: Generating CIDR Lists
-        run: python3 ./generate_cidr.py
+        run: python3 ./src/generate_cidr.py
+      
+      - name: Generating RouterOS Lists
+        run: python3 ./src/router_os_list.py
 
       - name: Update IP count in README.md
         run: |
@@ -55,7 +58,7 @@ jobs:
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
           git config --local user.name 'touhidurrr'
-          git add ipv?_list.txt cidr?.txt README.md
+          git add lists/ README.md
           git commit -m 'Updated Lists [Automated]'
           git pull
           git push

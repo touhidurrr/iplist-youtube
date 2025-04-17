@@ -1,5 +1,8 @@
 import asyncio
+
 from yaml import load
+
+import constants
 
 try:
   from yaml import CLoader as Loader
@@ -18,7 +21,7 @@ async def check_dns_ip(group, ip):
 
 
 async def main():
-  with open('dns_resolvers.yml', mode='r', encoding='utf-8') as f:
+  with open(constants.DNS_RESOLVER_LIST_PATH, mode='r', encoding='utf-8') as f:
     ip_groups = load(f, Loader=Loader)
 
   tasks = []

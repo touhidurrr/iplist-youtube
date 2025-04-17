@@ -1,6 +1,7 @@
 from ipaddress import (IPv4Address, IPv6Address, ip_address,
                        summarize_address_range)
 
+import constants
 from list_generator import IPList, read_ips
 
 
@@ -38,16 +39,18 @@ def main():
   ipv6List.sort()
 
   cidr4 = makeCIDRRangesList(ipv4List)
-  # for IPv6, a 64 bit mask is not extensive
+  # for IPv6, a 64 bit mask is not that extensive
   cidr6 = makeCIDRRangesList(ipv6List, 64)
 
-  with open('cidr4.txt', mode='w', encoding='utf-8') as f:
+  with open(constants.CIDR4_LIST_PATH, mode='w', encoding='utf-8') as f:
 
     f.write('\n'.join(map(str, cidr4)) + '\n')
+    print(f'Wrote {len(cidr4)} CIDR4 ranges to {constants.CIDR4_LIST_PATH}')
 
-  with open('cidr6.txt', mode='w', encoding='utf-8') as f:
+  with open(constants.CIDR6_LIST_PATH, mode='w', encoding='utf-8') as f:
 
     f.write('\n'.join(map(str, cidr6)) + '\n')
+    print(f'Wrote {len(cidr6)} CIDR6 ranges to {constants.CIDR6_LIST_PATH}')
 
 
 if __name__ == '__main__':
