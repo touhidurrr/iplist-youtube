@@ -596,9 +596,7 @@ ipv6 firewall address-list add list=youtube address=2404:6800:4008:c15::/64
 ipv6 firewall address-list add list=youtube address=2404:6800:4008:c19::/64
 ipv6 firewall address-list add list=youtube address=2404:6800:4008:c1b::/64
 ipv6 firewall address-list add list=youtube address=2404:6800:4009:16::/64
-ipv6 firewall address-list add list=youtube address=2404:6800:4009:800::/62
-ipv6 firewall address-list add list=youtube address=2404:6800:4009:804::/63
-ipv6 firewall address-list add list=youtube address=2404:6800:4009:806::/64
+ipv6 firewall address-list add list=youtube address=2404:6800:4009:800::/61
 ipv6 firewall address-list add list=youtube address=2404:6800:4009:809::/64
 ipv6 firewall address-list add list=youtube address=2404:6800:4009:80a::/63
 ipv6 firewall address-list add list=youtube address=2404:6800:4009:80c::/62
