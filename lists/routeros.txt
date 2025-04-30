@@ -432,6 +432,7 @@ ip firewall address-list add list=youtube address=192.178.128.0/22
 ip firewall address-list add list=youtube address=192.178.153.0/24
 ip firewall address-list add list=youtube address=192.178.154.0/23
 ip firewall address-list add list=youtube address=192.178.163.0/24
+ip firewall address-list add list=youtube address=192.178.218.0/24
 ip firewall address-list add list=youtube address=193.109.164.0/24
 ip firewall address-list add list=youtube address=194.78.0.0/24
 ip firewall address-list add list=youtube address=196.49.8.0/24
@@ -733,6 +734,7 @@ ipv6 firewall address-list add list=youtube address=2607:f8b0:4004:c1d::/64
 ipv6 firewall address-list add list=youtube address=2607:f8b0:4004:c1f::/64
 ipv6 firewall address-list add list=youtube address=2607:f8b0:4004:c21::/64
 ipv6 firewall address-list add list=youtube address=2607:f8b0:4004:c23::/64
+ipv6 firewall address-list add list=youtube address=2607:f8b0:4004:c25::/64
 ipv6 firewall address-list add list=youtube address=2607:f8b0:4005:c::/64
 ipv6 firewall address-list add list=youtube address=2607:f8b0:4005:801::/64
 ipv6 firewall address-list add list=youtube address=2607:f8b0:4005:802::/63
