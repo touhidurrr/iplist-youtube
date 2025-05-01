@@ -1,7 +1,6 @@
-/ip firewall address-list remove [find list=youtube]
-/ipv6 firewall address-list remove [find list=youtube]
 
 /ip firewall address-list
+remove [find list=youtube]
 add list=youtube address=4.78.139.0/24
 add list=youtube address=23.101.24.0/24
 add list=youtube address=23.202.231.0/24
@@ -498,6 +497,7 @@ add list=youtube address=216.239.38.0/24
 add list=youtube address=220.181.174.0/24
 
 /ipv6 firewall address-list
+remove [find list=youtube]
 add list=youtube address=607:f8b0:4001:c0a::/64
 add list=youtube address=2001:3b8:101:3a::/64
 add list=youtube address=2001:c08:7f:151::/64
