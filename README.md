@@ -14,7 +14,7 @@ YouTube IPs.
 - [ipv6.txt](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/ipv6.txt)
 - [cidr4.txt](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/cidr4.txt)
 - [cidr6.txt](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/cidr6.txt)
-- [routeros.txt](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/routeros.txt) ***NEW!***
+- [routeros.rsc](https://raw.githubusercontent.com/touhidurrr/iplist-youtube/main/lists/routeros.rsc) ***NEW!***
 
 Used open source lists:
   1. https://github.com/nickspaargaren/no-google/blob/master/categories/youtubeparsed
