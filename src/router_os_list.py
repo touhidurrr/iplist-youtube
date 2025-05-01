@@ -6,7 +6,7 @@ def main():
     with open(constants.CIDR4_LIST_PATH, mode='r', encoding='utf-8') as cidr4_file:
       cidr4_list = cidr4_file.read().splitlines()
 
-      f.write('\n/ip firewall address-list\n')
+      f.write('/ip firewall address-list\n')
       f.write('remove [find list=youtube]\n')
       for cidr4 in cidr4_list:
         f.write(f'add list=youtube address={cidr4}\n')
