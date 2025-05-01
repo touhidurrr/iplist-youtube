@@ -1,4 +1,3 @@
-
 /ip firewall address-list
 remove [find list=youtube]
 add list=youtube address=4.78.139.0/24
