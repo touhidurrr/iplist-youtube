@@ -892,9 +892,7 @@ add list=youtube address=2800:3f0:4001:800::/58
 add list=youtube address=2800:3f0:4001:840::/61
 add list=youtube address=2800:3f0:4002:f::/64
 add list=youtube address=2800:3f0:4002:800::/60
-add list=youtube address=2800:3f0:4002:810::/62
-add list=youtube address=2800:3f0:4002:814::/64
-add list=youtube address=2800:3f0:4002:816::/63
+add list=youtube address=2800:3f0:4002:810::/61
 add list=youtube address=2800:3f0:4003:c00::/62
 add list=youtube address=2800:3f0:4003:c08::/64
 add list=youtube address=2800:3f0:4003:c0f::/64
