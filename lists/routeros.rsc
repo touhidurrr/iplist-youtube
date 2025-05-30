@@ -584,11 +584,7 @@ add list=youtube address=2404:6800:4006:80a::/63
 add list=youtube address=2404:6800:4006:80e::/63
 add list=youtube address=2404:6800:4006:810::/62
 add list=youtube address=2404:6800:4006:814::/64
-add list=youtube address=2404:6800:4007:800::/63
-add list=youtube address=2404:6800:4007:803::/64
-add list=youtube address=2404:6800:4007:804::/62
-add list=youtube address=2404:6800:4007:808::/61
-add list=youtube address=2404:6800:4007:810::/60
+add list=youtube address=2404:6800:4007:800::/59
 add list=youtube address=2404:6800:4007:820::/61
 add list=youtube address=2404:6800:4007:828::/62
 add list=youtube address=2404:6800:4007:82c::/63
