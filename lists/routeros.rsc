@@ -906,7 +906,7 @@ add list=youtube address=2800:3f0:4005:408::/61
 add list=youtube address=2800:3f0:4005:410::/63
 add list=youtube address=2800:3f0:4005:412::/64
 add list=youtube address=2800:3f0:4005:417::/64
-add list=youtube address=2800:3f0:4005:418::/64
+add list=youtube address=2800:3f0:4005:418::/63
 add list=youtube address=2803:600:cace::/64
 add list=youtube address=2804:d50:80:f00d::/64
 add list=youtube address=2a00:f46:0:302::/64
