@@ -592,7 +592,7 @@ add list=youtube address=2404:6800:4007:828::/62
 add list=youtube address=2404:6800:4007:82c::/63
 add list=youtube address=2404:6800:4007:82f::/64
 add list=youtube address=2404:6800:4007:830::/61
-add list=youtube address=2404:6800:4007:838::/64
+add list=youtube address=2404:6800:4007:838::/63
 add list=youtube address=2404:6800:4007:83a::/64
 add list=youtube address=2404:6800:4008::/64
 add list=youtube address=2404:6800:4008:a::/64
