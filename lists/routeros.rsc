@@ -1037,8 +1037,8 @@ add list=youtube address=2a00:1450:4017:810::/62
 add list=youtube address=2a00:1450:4017:814::/63
 add list=youtube address=2a00:1450:4017:816::/64
 add list=youtube address=2a00:1450:4018:800::/61
-add list=youtube address=2a00:1450:4018:808::/63
-add list=youtube address=2a00:1450:4018:80a::/64
+add list=youtube address=2a00:1450:4018:808::/62
+add list=youtube address=2a00:1450:4018:80e::/64
 add list=youtube address=2a00:1450:4019:800::/62
 add list=youtube address=2a00:1450:4019:805::/64
 add list=youtube address=2a00:1450:4019:806::/63
