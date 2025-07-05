@@ -1,7 +1,8 @@
 #!/bin/python3
 import asyncio
+from socket import has_ipv6
 from ipaddress import IPv4Address, IPv6Address, ip_address
-from random import shuffle
+from random import choice, shuffle
 from urllib.request import urlretrieve as download
 
 from dns import asyncresolver
@@ -28,7 +29,18 @@ def get_ip_fetcher():
   # load resolvers from dns_resolvers.yaml
   with open(constants.DNS_RESOLVER_LIST_PATH, mode='r', encoding='utf-8') as resolvers_file:
     dns_resolvers: dict[str, list[str]] = load(resolvers_file, Loader=Loader)
-    dns_resolver_ips = [ip for ips in dns_resolvers.values() for ip in ips]
+
+    dns_resolver_ips = []
+    for ips in dns_resolvers.values():
+      # if ipv6 is not supported, take only ipv4 addresses
+      if not has_ipv6:
+        print('IPv6 is not supported, using only IPv4 resolvers.')
+        ips = list(filter(lambda ip: isinstance(
+          ip_address(ip), IPv4Address), ips))
+
+      # choose a resolver from each group
+      if len(ips) > 0:
+        dns_resolver_ips.append(choice(ips))
 
     # shuffle the list to possibly get more ips
     shuffle(dns_resolver_ips)
@@ -160,6 +172,7 @@ async def main():
 
   # get ip fetcher
   ip_fetcher = get_ip_fetcher()
+  return
 
   # get coroutines
   coroutines = get_coroutines(ipv4List, ipv6List, ip_fetcher)

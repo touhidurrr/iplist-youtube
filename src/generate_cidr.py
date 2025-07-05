@@ -1,5 +1,4 @@
-from ipaddress import (IPv4Address, IPv6Address, ip_address,
-                       summarize_address_range)
+from ipaddress import IPv4Address, IPv6Address, summarize_address_range
 
 import constants
 from list_generator import IPList, read_ips
