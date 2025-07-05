@@ -7,8 +7,8 @@ license = "BSD-3-Clause"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
-cryptography = "^44.0.2"
+python = ">=3.12"
+cryptography = "^45.0.5"
 dnspython = "^2.7.0"
 pyyaml = "^6.0.2"
 
