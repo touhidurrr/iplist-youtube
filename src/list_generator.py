@@ -1,8 +1,9 @@
 #!/bin/python3
 import asyncio
-from socket import has_ipv6
 from ipaddress import IPv4Address, IPv6Address, ip_address
+from os import getenv
 from random import choice, shuffle
+from socket import has_ipv6
 from urllib.request import urlretrieve as download
 
 from dns import asyncresolver
@@ -30,11 +31,19 @@ def get_ip_fetcher():
   with open(constants.DNS_RESOLVER_LIST_PATH, mode='r', encoding='utf-8') as resolvers_file:
     dns_resolvers: dict[str, list[str]] = load(resolvers_file, Loader=Loader)
 
+    filter_ipv6 = False
+    if not has_ipv6:
+      # if ipv6 is not supported, take only ipv4 addresses
+      print('No IPv6 is support detected, disabling IPv6 resolvers...')
+      filter_ipv6 = True
+    elif getenv('GITHUB_ACTIONS') == 'true':
+      # IPv6 does not work properly in GitHub Actions
+      print('Running in GitHub Actions, disabling IPv6 resolvers...')
+      filter_ipv6 = True
+
     dns_resolver_ips = []
     for ips in dns_resolvers.values():
-      # if ipv6 is not supported, take only ipv4 addresses
-      if not has_ipv6:
-        print('IPv6 is not supported, using only IPv4 resolvers.')
+      if filter_ipv6:
         ips = list(filter(lambda ip: isinstance(
           ip_address(ip), IPv4Address), ips))
 
@@ -172,7 +181,6 @@ async def main():
 
   # get ip fetcher
   ip_fetcher = get_ip_fetcher()
-  return
 
   # get coroutines
   coroutines = get_coroutines(ipv4List, ipv6List, ip_fetcher)
