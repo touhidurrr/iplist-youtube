@@ -1049,6 +1049,7 @@ add list=youtube address=2a00:1450:4018:80e::/64
 add list=youtube address=2a00:1450:4019:800::/60
 add list=youtube address=2a00:1450:4019:810::/63
 add list=youtube address=2a00:1450:4019:812::/64
+add list=youtube address=2a00:1450:4019:814::/64
 add list=youtube address=2a00:1450:401a:800::/63
 add list=youtube address=2a00:1450:401a:804::/63
 add list=youtube address=2a00:1450:401b:800::/61
