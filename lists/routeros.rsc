@@ -990,6 +990,7 @@ add list=youtube address=2a00:1450:4009:826::/63
 add list=youtube address=2a00:1450:4009:c04::/64
 add list=youtube address=2a00:1450:4009:c08::/64
 add list=youtube address=2a00:1450:4009:c0b::/64
+add list=youtube address=2a00:1450:4009:c0f::/64
 add list=youtube address=2a00:1450:4009:c13::/64
 add list=youtube address=2a00:1450:4009:c15::/64
 add list=youtube address=2a00:1450:4009:c17::/64
