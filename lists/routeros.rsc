@@ -1054,11 +1054,8 @@ add list=youtube address=2a00:1450:4017:800::/60
 add list=youtube address=2a00:1450:4017:810::/62
 add list=youtube address=2a00:1450:4017:814::/63
 add list=youtube address=2a00:1450:4017:816::/64
-add list=youtube address=2a00:1450:4018:800::/61
-add list=youtube address=2a00:1450:4018:808::/62
-add list=youtube address=2a00:1450:4018:80d::/64
-add list=youtube address=2a00:1450:4018:80e::/63
-add list=youtube address=2a00:1450:4018:810::/64
+add list=youtube address=2a00:1450:4018:800::/60
+add list=youtube address=2a00:1450:4018:810::/63
 add list=youtube address=2a00:1450:4018:812::/64
 add list=youtube address=2a00:1450:4019:800::/60
 add list=youtube address=2a00:1450:4019:810::/62
