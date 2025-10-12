@@ -636,10 +636,7 @@ add list=youtube address=2404:6800:400f:c::/64
 add list=youtube address=2404:6800:4012::/61
 add list=youtube address=2404:6800:4012:8::/63
 add list=youtube address=2404:6800:4015:800::/62
-add list=youtube address=2404:6800:4016:800::/61
-add list=youtube address=2404:6800:4016:808::/62
-add list=youtube address=2404:6800:4016:80d::/64
-add list=youtube address=2404:6800:4016:80e::/63
+add list=youtube address=2404:6800:4016:800::/60
 add list=youtube address=2404:6800:4017:800::/62
 add list=youtube address=2404:6800:4017:804::/63
 add list=youtube address=2404:a800:6:a::/64
