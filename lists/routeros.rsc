@@ -339,6 +339,7 @@ add list=youtube address=168.143.162.0/24
 add list=youtube address=168.143.171.0/24
 add list=youtube address=172.217.0.0/19
 add list=youtube address=172.217.70.0/24
+add list=youtube address=172.217.75.0/24
 add list=youtube address=172.217.78.0/24
 add list=youtube address=172.217.129.0/24
 add list=youtube address=172.217.130.0/24
