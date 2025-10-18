@@ -8,5 +8,7 @@ IPv6_LIST_PATH = LISTS_DIR / 'ipv6.txt'
 CIDR4_LIST_PATH = LISTS_DIR / 'cidr4.txt'
 CIDR6_LIST_PATH = LISTS_DIR / 'cidr6.txt'
 ROUTER_OS_LIST_PATH = LISTS_DIR / 'routeros.rsc'
+ROUTER_OS_V4_LIST_PATH = LISTS_DIR / 'routerosv4.rsc'
+ROUTER_OS_V6_LIST_PATH = LISTS_DIR / 'routerosv6.rsc'
 
 DNS_RESOLVER_LIST_PATH = Path('dns_resolvers.yml')
