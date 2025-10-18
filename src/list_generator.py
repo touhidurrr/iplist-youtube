@@ -15,6 +15,9 @@ type IPList = list[IP]
 
 
 def isGlobalIP(ip: IP) -> bool:
+  if isinstance(ip, IPv6Address):
+    if ip.ipv4_mapped is not None:
+      return False
   return ip.is_global
 
 
