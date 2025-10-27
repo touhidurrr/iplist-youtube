@@ -52,6 +52,7 @@ add list=youtube address=2404:6800:4003:c11::/64
 add list=youtube address=2404:6800:4003:c1a::/64
 add list=youtube address=2404:6800:4003:c1c::/64
 add list=youtube address=2404:6800:4003:c20::/64
+add list=youtube address=2404:6800:4003:c22::/64
 add list=youtube address=2404:6800:4004:11::/64
 add list=youtube address=2404:6800:4004:12::/63
 add list=youtube address=2404:6800:4004:14::/63
