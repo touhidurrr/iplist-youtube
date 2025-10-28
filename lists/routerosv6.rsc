@@ -33,6 +33,7 @@ add list=youtube address=2404:6800:4001:800::/60
 add list=youtube address=2404:6800:4001:810::/62
 add list=youtube address=2404:6800:4001:814::/64
 add list=youtube address=2404:6800:4001:816::/63
+add list=youtube address=2404:6800:4001:818::/64
 add list=youtube address=2404:6800:4002:802::/63
 add list=youtube address=2404:6800:4002:804::/62
 add list=youtube address=2404:6800:4002:808::/61
