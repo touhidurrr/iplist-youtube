@@ -605,6 +605,7 @@ add list=youtube address=2404:6800:4009:16::/64
 add list=youtube address=2404:6800:4009:800::/60
 add list=youtube address=2404:6800:4009:810::/62
 add list=youtube address=2404:6800:4009:814::/63
+add list=youtube address=2404:6800:4009:816::/64
 add list=youtube address=2404:6800:4009:818::/61
 add list=youtube address=2404:6800:4009:820::/60
 add list=youtube address=2404:6800:4009:830::/63
