@@ -377,6 +377,7 @@ add list=youtube address=2607:f8b0:4023:1c01::/64
 add list=youtube address=2607:f8b0:4023:1c03::/64
 add list=youtube address=2607:f8b0:4023:1c05::/64
 add list=youtube address=2607:f8b0:4023:1c07::/64
+add list=youtube address=2607:f8b0:4023:2007::/64
 add list=youtube address=2607:f8b0:4023:2009::/64
 add list=youtube address=2607:f8b0:4023:200b::/64
 add list=youtube address=2607:f8b0:4023:2801::/64

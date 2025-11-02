@@ -294,9 +294,7 @@ add list=youtube address=142.251.164.0/22
 add list=youtube address=142.251.168.0/24
 add list=youtube address=142.251.170.0/23
 add list=youtube address=142.251.172.0/22
-add list=youtube address=142.251.176.0/22
-add list=youtube address=142.251.180.0/24
-add list=youtube address=142.251.182.0/23
+add list=youtube address=142.251.176.0/21
 add list=youtube address=142.251.184.0/22
 add list=youtube address=142.251.188.0/23
 add list=youtube address=142.251.190.0/24
