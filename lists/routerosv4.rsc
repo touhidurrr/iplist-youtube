@@ -444,6 +444,8 @@ add list=youtube address=192.178.162.0/23
 add list=youtube address=192.178.164.0/24
 add list=youtube address=192.178.188.0/24
 add list=youtube address=192.178.192.0/24
+add list=youtube address=192.178.202.0/23
+add list=youtube address=192.178.204.0/24
 add list=youtube address=192.178.209.0/24
 add list=youtube address=192.178.210.0/24
 add list=youtube address=192.178.212.0/23
