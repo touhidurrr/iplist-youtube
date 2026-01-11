@@ -283,6 +283,7 @@ add list=youtube address=142.251.108.0/24
 add list=youtube address=142.251.111.0/24
 add list=youtube address=142.251.112.0/24
 add list=youtube address=142.251.116.0/23
+add list=youtube address=142.251.118.0/24
 add list=youtube address=142.251.120.0/23
 add list=youtube address=142.251.128.0/23
 add list=youtube address=142.251.130.0/24
@@ -351,7 +352,7 @@ add list=youtube address=172.217.192.0/22
 add list=youtube address=172.217.197.0/24
 add list=youtube address=172.217.203.0/24
 add list=youtube address=172.217.204.0/24
-add list=youtube address=172.217.208.0/24
+add list=youtube address=172.217.208.0/23
 add list=youtube address=172.217.211.0/24
 add list=youtube address=172.217.212.0/24
 add list=youtube address=172.217.214.0/23
@@ -623,10 +624,14 @@ add list=youtube address=2404:6800:4009:832::/64
 add list=youtube address=2404:6800:400a:4::/64
 add list=youtube address=2404:6800:400a:b::/64
 add list=youtube address=2404:6800:400a:804::/62
+add list=youtube address=2404:6800:400a:808::/64
 add list=youtube address=2404:6800:400a:80a::/63
 add list=youtube address=2404:6800:400a:80c::/64
 add list=youtube address=2404:6800:400a:80e::/64
 add list=youtube address=2404:6800:400a:813::/64
+add list=youtube address=2404:6800:400a:1000::/63
+add list=youtube address=2404:6800:400a:1002::/64
+add list=youtube address=2404:6800:400a:1009::/64
 add list=youtube address=2404:6800:400b::/63
 add list=youtube address=2404:6800:400b:2::/64
 add list=youtube address=2404:6800:400b:4::/64

@@ -100,10 +100,14 @@ add list=youtube address=2404:6800:4009:832::/64
 add list=youtube address=2404:6800:400a:4::/64
 add list=youtube address=2404:6800:400a:b::/64
 add list=youtube address=2404:6800:400a:804::/62
+add list=youtube address=2404:6800:400a:808::/64
 add list=youtube address=2404:6800:400a:80a::/63
 add list=youtube address=2404:6800:400a:80c::/64
 add list=youtube address=2404:6800:400a:80e::/64
 add list=youtube address=2404:6800:400a:813::/64
+add list=youtube address=2404:6800:400a:1000::/63
+add list=youtube address=2404:6800:400a:1002::/64
+add list=youtube address=2404:6800:400a:1009::/64
 add list=youtube address=2404:6800:400b::/63
 add list=youtube address=2404:6800:400b:2::/64
 add list=youtube address=2404:6800:400b:4::/64
