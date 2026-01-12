@@ -298,8 +298,7 @@ add list=youtube address=142.251.176.0/21
 add list=youtube address=142.251.184.0/22
 add list=youtube address=142.251.188.0/23
 add list=youtube address=142.251.190.0/24
-add list=youtube address=142.251.208.0/23
-add list=youtube address=142.251.211.0/24
+add list=youtube address=142.251.208.0/22
 add list=youtube address=142.251.214.0/23
 add list=youtube address=142.251.216.0/24
 add list=youtube address=142.251.218.0/24
@@ -771,6 +770,7 @@ add list=youtube address=2607:f8b0:4006:33::/64
 add list=youtube address=2607:f8b0:4006:3c::/64
 add list=youtube address=2607:f8b0:4006:3e::/64
 add list=youtube address=2607:f8b0:4006:800::/60
+add list=youtube address=2607:f8b0:4006:811::/64
 add list=youtube address=2607:f8b0:4006:816::/63
 add list=youtube address=2607:f8b0:4006:81c::/62
 add list=youtube address=2607:f8b0:4006:820::/62
