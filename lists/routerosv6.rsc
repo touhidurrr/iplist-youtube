@@ -107,6 +107,7 @@ add list=youtube address=2404:6800:400a:80e::/64
 add list=youtube address=2404:6800:400a:813::/64
 add list=youtube address=2404:6800:400a:1000::/63
 add list=youtube address=2404:6800:400a:1002::/64
+add list=youtube address=2404:6800:400a:1007::/64
 add list=youtube address=2404:6800:400a:1009::/64
 add list=youtube address=2404:6800:400b::/63
 add list=youtube address=2404:6800:400b:2::/64
