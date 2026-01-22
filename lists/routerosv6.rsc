@@ -250,6 +250,7 @@ add list=youtube address=2607:f8b0:4006:3c::/64
 add list=youtube address=2607:f8b0:4006:3e::/64
 add list=youtube address=2607:f8b0:4006:800::/60
 add list=youtube address=2607:f8b0:4006:810::/63
+add list=youtube address=2607:f8b0:4006:812::/64
 add list=youtube address=2607:f8b0:4006:816::/63
 add list=youtube address=2607:f8b0:4006:81c::/62
 add list=youtube address=2607:f8b0:4006:820::/62
