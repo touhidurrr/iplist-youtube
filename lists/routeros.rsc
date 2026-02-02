@@ -550,6 +550,7 @@ add list=youtube address=2401:7400:8888:11::/64
 add list=youtube address=2401:b200:40:7::/64
 add list=youtube address=2402:800:6350:119::/64
 add list=youtube address=2403:6200:ffff:fff9::/64
+add list=youtube address=2404:6800:4000:1025::/64
 add list=youtube address=2404:6800:4001:800::/60
 add list=youtube address=2404:6800:4001:810::/61
 add list=youtube address=2404:6800:4001:818::/63
