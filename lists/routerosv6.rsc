@@ -483,7 +483,7 @@ add list=youtube address=2a00:1450:4007:815::/64
 add list=youtube address=2a00:1450:4007:816::/63
 add list=youtube address=2a00:1450:4007:818::/63
 add list=youtube address=2a00:1450:4007:81a::/64
-add list=youtube address=2a00:1450:4008:800::/64
+add list=youtube address=2a00:1450:4008:800::/63
 add list=youtube address=2a00:1450:4008:804::/62
 add list=youtube address=2a00:1450:4009:80a::/63
 add list=youtube address=2a00:1450:4009:815::/64
@@ -559,9 +559,7 @@ add list=youtube address=2a00:1450:4016:808::/62
 add list=youtube address=2a00:1450:4016:80c::/64
 add list=youtube address=2a00:1450:4017:f::/64
 add list=youtube address=2a00:1450:4017:800::/60
-add list=youtube address=2a00:1450:4017:810::/62
-add list=youtube address=2a00:1450:4017:814::/63
-add list=youtube address=2a00:1450:4017:816::/64
+add list=youtube address=2a00:1450:4017:810::/61
 add list=youtube address=2a00:1450:4018:800::/60
 add list=youtube address=2a00:1450:4018:810::/62
 add list=youtube address=2a00:1450:4018:814::/64
