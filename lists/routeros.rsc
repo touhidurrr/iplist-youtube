@@ -1176,5 +1176,4 @@ add list=youtube address=2c0f:fb50:4002:808::/62
 add list=youtube address=2c0f:fb50:4002:80c::/64
 add list=youtube address=2c0f:fb50:4002:812::/63
 add list=youtube address=2c0f:fb50:4002:81c::/62
-add list=youtube address=2c0f:fb50:4003:801::/64
-add list=youtube address=2c0f:fb50:4003:802::/63
+add list=youtube address=2c0f:fb50:4003:800::/62
