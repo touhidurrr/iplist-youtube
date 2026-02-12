@@ -562,7 +562,7 @@ add list=youtube address=2a00:1450:4017:f::/64
 add list=youtube address=2a00:1450:4017:800::/60
 add list=youtube address=2a00:1450:4017:810::/61
 add list=youtube address=2a00:1450:4017:819::/64
-add list=youtube address=2a00:1450:4017:81b::/64
+add list=youtube address=2a00:1450:4017:81a::/63
 add list=youtube address=2a00:1450:4018:800::/60
 add list=youtube address=2a00:1450:4018:810::/62
 add list=youtube address=2a00:1450:4018:814::/64
