@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.12"
-cryptography = "^46.0.3"
+cryptography = "^46.0.5"
 dnspython = "^2.8.0"
 pyyaml = "^6.0.2"
 
