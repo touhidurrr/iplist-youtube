@@ -766,11 +766,7 @@ add list=youtube address=2607:f8b0:4005:814::/64
 add list=youtube address=2607:f8b0:4006:33::/64
 add list=youtube address=2607:f8b0:4006:3c::/64
 add list=youtube address=2607:f8b0:4006:3e::/64
-add list=youtube address=2607:f8b0:4006:800::/60
-add list=youtube address=2607:f8b0:4006:810::/61
-add list=youtube address=2607:f8b0:4006:818::/64
-add list=youtube address=2607:f8b0:4006:81a::/63
-add list=youtube address=2607:f8b0:4006:81c::/62
+add list=youtube address=2607:f8b0:4006:800::/59
 add list=youtube address=2607:f8b0:4006:820::/62
 add list=youtube address=2607:f8b0:4006:824::/64
 add list=youtube address=2607:f8b0:4007:801::/64
