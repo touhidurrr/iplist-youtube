@@ -777,10 +777,7 @@ add list=youtube address=2607:f8b0:4007:810::/63
 add list=youtube address=2607:f8b0:4007:813::/64
 add list=youtube address=2607:f8b0:4007:814::/62
 add list=youtube address=2607:f8b0:4007:818::/63
-add list=youtube address=2607:f8b0:4008:800::/61
-add list=youtube address=2607:f8b0:4008:808::/62
-add list=youtube address=2607:f8b0:4008:80c::/63
-add list=youtube address=2607:f8b0:4008:80e::/64
+add list=youtube address=2607:f8b0:4008:800::/60
 add list=youtube address=2607:f8b0:4008:813::/64
 add list=youtube address=2607:f8b0:4008:814::/63
 add list=youtube address=2607:f8b0:4009::/64
