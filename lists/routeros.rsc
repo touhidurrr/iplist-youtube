@@ -966,7 +966,7 @@ add list=youtube address=2a00:1450:4001:c1f::/64
 add list=youtube address=2a00:1450:4001:c21::/64
 add list=youtube address=2a00:1450:4002:10::/64
 add list=youtube address=2a00:1450:4002:400::/61
-add list=youtube address=2a00:1450:4002:408::/64
+add list=youtube address=2a00:1450:4002:408::/63
 add list=youtube address=2a00:1450:4002:410::/63
 add list=youtube address=2a00:1450:4002:414::/63
 add list=youtube address=2a00:1450:4002:416::/64
