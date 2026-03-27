@@ -450,6 +450,7 @@ add list=youtube address=2a00:1450:4001:c15::/64
 add list=youtube address=2a00:1450:4001:c17::/64
 add list=youtube address=2a00:1450:4001:c1f::/64
 add list=youtube address=2a00:1450:4001:c21::/64
+add list=youtube address=2a00:1450:4001:c25::/64
 add list=youtube address=2a00:1450:4002:10::/64
 add list=youtube address=2a00:1450:4002:400::/61
 add list=youtube address=2a00:1450:4002:408::/63
