@@ -302,7 +302,7 @@ add list=youtube address=142.251.190.0/24
 add list=youtube address=142.251.208.0/22
 add list=youtube address=142.251.214.0/23
 add list=youtube address=142.251.216.0/24
-add list=youtube address=142.251.218.0/24
+add list=youtube address=142.251.218.0/23
 add list=youtube address=142.251.220.0/22
 add list=youtube address=145.255.14.0/24
 add list=youtube address=148.163.48.0/24
