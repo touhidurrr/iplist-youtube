@@ -799,11 +799,7 @@ add list=youtube address=2607:f8b0:4009:2d::/64
 add list=youtube address=2607:f8b0:4009:35::/64
 add list=youtube address=2607:f8b0:4009:3d::/64
 add list=youtube address=2607:f8b0:4009:3e::/64
-add list=youtube address=2607:f8b0:4009:800::/60
-add list=youtube address=2607:f8b0:4009:810::/61
-add list=youtube address=2607:f8b0:4009:818::/62
-add list=youtube address=2607:f8b0:4009:81c::/63
-add list=youtube address=2607:f8b0:4009:81e::/64
+add list=youtube address=2607:f8b0:4009:800::/59
 add list=youtube address=2607:f8b0:4009:820::/64
 add list=youtube address=2607:f8b0:400a:800::/61
 add list=youtube address=2607:f8b0:400a:808::/62
