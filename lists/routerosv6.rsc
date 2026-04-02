@@ -248,9 +248,7 @@ add list=youtube address=2607:f8b0:4005:801::/64
 add list=youtube address=2607:f8b0:4005:802::/63
 add list=youtube address=2607:f8b0:4005:804::/62
 add list=youtube address=2607:f8b0:4005:808::/61
-add list=youtube address=2607:f8b0:4005:810::/62
-add list=youtube address=2607:f8b0:4005:814::/64
-add list=youtube address=2607:f8b0:4005:817::/64
+add list=youtube address=2607:f8b0:4005:810::/61
 add list=youtube address=2607:f8b0:4006:33::/64
 add list=youtube address=2607:f8b0:4006:3c::/64
 add list=youtube address=2607:f8b0:4006:3e::/64
