@@ -805,6 +805,7 @@ add list=youtube address=2607:f8b0:4007:818::/63
 add list=youtube address=2607:f8b0:4008:800::/60
 add list=youtube address=2607:f8b0:4008:810::/62
 add list=youtube address=2607:f8b0:4008:814::/63
+add list=youtube address=2607:f8b0:4008:816::/64
 add list=youtube address=2607:f8b0:4009::/64
 add list=youtube address=2607:f8b0:4009:2d::/64
 add list=youtube address=2607:f8b0:4009:35::/64
