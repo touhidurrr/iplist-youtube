@@ -185,6 +185,7 @@ add list=youtube address=2607:f8b0:4001:c6e::/64
 add list=youtube address=2607:f8b0:4001:c70::/64
 add list=youtube address=2607:f8b0:4001:c72::/64
 add list=youtube address=2607:f8b0:4001:c74::/64
+add list=youtube address=2607:f8b0:4001:c76::/64
 add list=youtube address=2607:f8b0:4002:1f::/64
 add list=youtube address=2607:f8b0:4002:800::/62
 add list=youtube address=2607:f8b0:4002:804::/64
