@@ -574,6 +574,7 @@ add list=youtube address=2403:6200:ffff:fff9::/64
 add list=youtube address=2404:6800:4000:1006::/64
 add list=youtube address=2404:6800:4000:100c::/64
 add list=youtube address=2404:6800:4000:100e::/64
+add list=youtube address=2404:6800:4000:1010::/64
 add list=youtube address=2404:6800:4000:1015::/64
 add list=youtube address=2404:6800:4000:1017::/64
 add list=youtube address=2404:6800:4000:101d::/64
