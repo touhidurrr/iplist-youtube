@@ -136,6 +136,7 @@ add list=youtube address=2404:6800:4013:400::/64
 add list=youtube address=2404:6800:4013:407::/64
 add list=youtube address=2404:6800:4013:409::/64
 add list=youtube address=2404:6800:4013:804::/64
+add list=youtube address=2404:6800:4013:807::/64
 add list=youtube address=2404:6800:4013:811::/64
 add list=youtube address=2404:6800:4013:813::/64
 add list=youtube address=2404:6800:4015:800::/62
