@@ -234,8 +234,7 @@ add list=youtube address=142.250.12.0/23
 add list=youtube address=142.250.21.0/24
 add list=youtube address=142.250.23.0/24
 add list=youtube address=142.250.26.0/23
-add list=youtube address=142.250.28.0/24
-add list=youtube address=142.250.30.0/23
+add list=youtube address=142.250.28.0/22
 add list=youtube address=142.250.64.0/20
 add list=youtube address=142.250.80.0/23
 add list=youtube address=142.250.96.0/21
