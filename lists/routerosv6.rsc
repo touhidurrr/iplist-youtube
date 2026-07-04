@@ -366,6 +366,7 @@ add list=youtube address=2607:f8b0:401e:2d::/64
 add list=youtube address=2607:f8b0:401e:2e::/64
 add list=youtube address=2607:f8b0:4020:800::/61
 add list=youtube address=2607:f8b0:4020:c07::/64
+add list=youtube address=2607:f8b0:4020:c0b::/64
 add list=youtube address=2607:f8b0:4023::/63
 add list=youtube address=2607:f8b0:4023:400::/62
 add list=youtube address=2607:f8b0:4023:807::/64
