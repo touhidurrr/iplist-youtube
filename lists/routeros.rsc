@@ -1102,6 +1102,7 @@ add list=youtube address=2a00:1450:400c:c0c::/63
 add list=youtube address=2a00:1450:400c:c1b::/64
 add list=youtube address=2a00:1450:400c:c1d::/64
 add list=youtube address=2a00:1450:400c:c1f::/64
+add list=youtube address=2a00:1450:400c:c23::/64
 add list=youtube address=2a00:1450:400d:802::/63
 add list=youtube address=2a00:1450:400d:804::/62
 add list=youtube address=2a00:1450:400d:808::/61
