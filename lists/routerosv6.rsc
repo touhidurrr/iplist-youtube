@@ -95,6 +95,7 @@ add list=youtube address=2404:6800:4005:b::/64
 add list=youtube address=2404:6800:4005:27::/64
 add list=youtube address=2404:6800:4005:800::/59
 add list=youtube address=2404:6800:4005:820::/61
+add list=youtube address=2404:6800:4005:c08::/64
 add list=youtube address=2404:6800:4006:a::/64
 add list=youtube address=2404:6800:4006:d::/64
 add list=youtube address=2404:6800:4006:800::/61
@@ -422,6 +423,7 @@ add list=youtube address=2607:f8b0:4023:1c07::/64
 add list=youtube address=2607:f8b0:4023:2007::/64
 add list=youtube address=2607:f8b0:4023:2009::/64
 add list=youtube address=2607:f8b0:4023:200b::/64
+add list=youtube address=2607:f8b0:4023:2403::/64
 add list=youtube address=2607:f8b0:4023:2801::/64
 add list=youtube address=2607:f8b0:4023:2803::/64
 add list=youtube address=2607:f8b0:4023:2c03::/64
