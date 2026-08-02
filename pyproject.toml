@@ -1,14 +1,15 @@
 [tool.poetry]
 name = "iplist-youtube"
-version = "0.2.0"
+version = "1.0.0"
 description = "An attempt to list all Youtube IPs at one place."
 authors = ["Md. Touhidur Rahman <touhidurrr@pm.me>"]
 license = "BSD-3-Clause"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.12"
-cryptography = "^46.0.7"
+cryptography = "^50.0.0"
 dnspython = "^2.8.0"
 pyyaml = "^6.0.3"
 
