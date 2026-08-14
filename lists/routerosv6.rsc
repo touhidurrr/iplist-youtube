@@ -179,6 +179,7 @@ add list=youtube address=2405:9800:8:3000::/64
 add list=youtube address=2407:0:0:13::/64
 add list=youtube address=2408:80f1:1b0:109::/64
 add list=youtube address=2409:871e:2700:1010::/64
+add list=youtube address=240e:983:1a04:6::/63
 add list=youtube address=2607:f740:100:108::/64
 add list=youtube address=2607:f8b0:4000:38::/64
 add list=youtube address=2607:f8b0:4000:42::/64
