@@ -1231,6 +1231,7 @@ add list=youtube address=2a00:1450:4025:1c09::/64
 add list=youtube address=2a00:1450:4025:2401::/64
 add list=youtube address=2a00:1450:4025:2403::/64
 add list=youtube address=2a00:1450:4025:2405::/64
+add list=youtube address=2a00:1450:4025:4401::/64
 add list=youtube address=2a00:1450:4026:800::/61
 add list=youtube address=2a00:1450:4026:808::/64
 add list=youtube address=2a00:1450:4028:800::/62
