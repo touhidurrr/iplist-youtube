@@ -9,7 +9,7 @@ on:
 
 jobs:
   check-dns-resolvers:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04-arm
 
     steps:
       - uses: actions/checkout@v7
