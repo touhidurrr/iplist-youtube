@@ -1,14 +1,15 @@
 import yaml
 import ipaddress
 
-# Unsure how it works
-# The purpose if to add 2 spaces before -
-class IndentDumper(yaml.SafeDumper):
-  def increase_indent(self, flow=False, indentless=False):
-    return super().increase_indent(flow, False)
-
 
 def main():
+
+  # Unsure how it works
+  # The purpose if to add 2 spaces before '-'
+  class IndentDumper(yaml.SafeDumper):
+    def increase_indent(self, flow=False, indentless=False):
+      return super().increase_indent(flow, False)
+
   def ip_sort_key(ip_str):
     ip = ipaddress.ip_address(ip_str)
     return (ip.version, ip)
