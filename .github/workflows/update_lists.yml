@@ -11,7 +11,7 @@ on:
 
 jobs:
   update-lists:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04-arm
 
     steps:
       - uses: actions/checkout@v7
