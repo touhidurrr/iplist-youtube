@@ -9,7 +9,7 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.12"
-cryptography = "^50.0.0"
+cryptography = "^50.0.1"
 dnspython = "^2.8.0"
 pyyaml = "^6.0.3"
 
