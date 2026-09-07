@@ -3,6 +3,7 @@ name: Check DNS Servers
 on:
   push:
     paths:
+      - dns_resolvers.yml
       - src/check_dns_servers.py
       - .github/workflows/check_dns_servers.yml
   workflow_dispatch:
