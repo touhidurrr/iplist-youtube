@@ -1,0 +1,46 @@
+name: Sort DNS Resolvers
+
+on:
+  push:
+    paths:
+      - dns_resolvers.yml
+      - src/sort_resolvers.py
+      - .github/workflows/sort_resolvers.yml
+  workflow_dispatch:
+
+jobs:
+  sort-dns-resolvers:
+    runs-on: ubuntu-26.04-arm
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+          check-latest: true
+          cache: "pip"
+
+      - name: Check Python3 Version
+        run: python3 --version
+
+      - name: Install Dependencies
+        run: |
+          pip3 install --upgrade pip
+          pip3 install -r requirements.txt
+
+      - name: Sort dns_resolvers.yml
+        run: python3 ./src/sort_resolvers.py
+
+      - name: Commit changes
+        run: |
+          git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
+          git config --local user.name 'touhidurrr'
+          git add lists/ README.md
+          git commit -m 'Sorted `dns_resolvers.yml` [Automated]'
+          git pull --rebase
+          git push
+
+      - name: Check diff
+        run: git diff HEAD~1..HEAD
