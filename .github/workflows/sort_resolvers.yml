@@ -37,7 +37,7 @@ jobs:
         run: |
           git config --local user.email '46617994+touhidurrr@users.noreply.github.com'
           git config --local user.name 'touhidurrr'
-          git add lists/ README.md
+          git add dns_resolvers.yml
           git commit -m 'Sorted `dns_resolvers.yml` [Automated]'
           git pull --rebase
           git push
