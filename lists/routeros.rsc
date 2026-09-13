@@ -404,6 +404,7 @@ add list=youtube address=173.194.73.0/24
 add list=youtube address=173.194.74.0/24
 add list=youtube address=173.194.76.0/22
 add list=youtube address=173.194.114.0/24
+add list=youtube address=173.194.116.0/24
 add list=youtube address=173.194.135.0/24
 add list=youtube address=173.194.150.0/24
 add list=youtube address=173.194.154.0/24
