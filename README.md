@@ -6,7 +6,7 @@ We use DNS Lookups to achieve this and the lists are automatically updated appro
 The project is currently **STABLE BETA.**
 So, not all IPs might be available.
 At present, it has a collection of
-**33969**
+**33970**
 YouTube IPs.
 
 # Lists
