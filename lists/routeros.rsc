@@ -403,6 +403,7 @@ add list=youtube address=173.194.70.0/24
 add list=youtube address=173.194.73.0/24
 add list=youtube address=173.194.74.0/24
 add list=youtube address=173.194.76.0/22
+add list=youtube address=173.194.112.0/24
 add list=youtube address=173.194.114.0/24
 add list=youtube address=173.194.116.0/24
 add list=youtube address=173.194.135.0/24
@@ -1006,6 +1007,7 @@ add list=youtube address=2607:f8b0:4023:142f::/64
 add list=youtube address=2607:f8b0:4023:1431::/64
 add list=youtube address=2607:f8b0:4023:1433::/64
 add list=youtube address=2607:f8b0:4023:1437::/64
+add list=youtube address=2607:f8b0:4023:1439::/64
 add list=youtube address=2607:f8b0:4023:1803::/64
 add list=youtube address=2607:f8b0:4023:1804::/64
 add list=youtube address=2607:f8b0:4023:1807::/64
