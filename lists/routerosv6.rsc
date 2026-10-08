@@ -16,6 +16,12 @@ add list=youtube address=2001:4860:4802:32::/64
 add list=youtube address=2001:4860:4802:34::/64
 add list=youtube address=2001:4860:4802:36::/64
 add list=youtube address=2001:4860:4802:38::/64
+add list=youtube address=2001:4860:4820:600::/64
+add list=youtube address=2001:4860:4821:600::/64
+add list=youtube address=2001:4860:4822:600::/64
+add list=youtube address=2001:4860:4823:600::/64
+add list=youtube address=2001:4860:4824:600::/64
+add list=youtube address=2001:4860:4825:600::/64
 add list=youtube address=2001:4860:4826:400::/64
 add list=youtube address=2001:4860:4826:600::/64
 add list=youtube address=2001:4860:4827:400::/64
@@ -32,6 +38,8 @@ add list=youtube address=2001:4860:482c:400::/64
 add list=youtube address=2001:4860:482c:600::/64
 add list=youtube address=2001:4860:482d:400::/64
 add list=youtube address=2001:4860:482d:600::/64
+add list=youtube address=2001:4860:4830:600::/64
+add list=youtube address=2001:4860:4831:600::/64
 add list=youtube address=2001:4860:4840:400::/64
 add list=youtube address=2001:4860:4841:400::/64
 add list=youtube address=2001:4860:4842:400::/64
