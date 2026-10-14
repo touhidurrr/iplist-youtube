@@ -420,6 +420,7 @@ add list=youtube address=2607:f8b0:4023:1011::/64
 add list=youtube address=2607:f8b0:4023:1013::/64
 add list=youtube address=2607:f8b0:4023:1015::/64
 add list=youtube address=2607:f8b0:4023:1017::/64
+add list=youtube address=2607:f8b0:4023:101b::/64
 add list=youtube address=2607:f8b0:4023:1401::/64
 add list=youtube address=2607:f8b0:4023:1402::/64
 add list=youtube address=2607:f8b0:4023:1404::/64
