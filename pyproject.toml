@@ -9,8 +9,8 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.12"
-cryptography = "^50.0.1"
-dnspython = "^2.8.0"
+cryptography = "^50.0.2"
+dnspython = "^2.9.2"
 pyyaml = "^6.0.3"
 
 [tool.autopep8]
